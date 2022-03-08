@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoemManager : MonoBehaviour
 {
     // References
-    public PoemLineViewer[] poemLines;
+    public PoemLineViewer[] lines;
 
     // Poem content
     public string[] haiku;

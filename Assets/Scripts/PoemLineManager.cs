@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class PoemLineManager : MonoBehaviour
 {
-    public string answer;
+    public PoemLineViewer poemLineViewer;
+    public string correctAnswer;
+    public string userAnswer;
+    public bool isAnsweredCorrectly;
     // TODO: Number of letters in the answer? To give user extra clue. Also, may tie into UI like how crossword puzzles have number of visible cubes to fill.
 
-    public bool CheckAnswer(string answerSubmitted)
+    public void CheckAnswer()
     {
-        bool isCorrect = false;
-        if(answerSubmitted == answer)
+        userAnswer = poemLineViewer.userInput.text;
+        Debug.Log("User's answer: " + userAnswer);
+        if(userAnswer == correctAnswer)
         {
-            isCorrect = true;
+            isAnsweredCorrectly = true;
+            Debug.Log(userAnswer + " is correct");
+        } else
+        {
+            isAnsweredCorrectly = false;
+            Debug.Log(userAnswer + " is not correct");
         }
-        return isCorrect;
+ 
     }
 
 }

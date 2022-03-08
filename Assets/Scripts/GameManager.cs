@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator SubmitAnswer(float WaitTime)
     {
         //TODO:
-        // Checks answer as user types in -can run CheckAnswer on an ongoing basis for the current line, no need for a “submit” button UI.vWait for a few seconds after input entered before showing errors / success.
+        // Every frame, check to see if the current line is answered (poemManagers[currentPoem].lines[currentLine].isAnswered) 
         // If answer is incorrect:
         // Show error message
         // UI change(such as highlighting incorrect tiles)

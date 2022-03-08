@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PoemLineViewer : MonoBehaviour
 {
+    public InputField userInput;
     public Text clue;
     public Text poemLine;
 
