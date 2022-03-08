@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PoemLineManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string answer;
+    // TODO: Number of letters in the answer? To give user extra clue. Also, may tie into UI like how crossword puzzles have number of visible cubes to fill.
+
+    public bool CheckAnswer(string answerSubmitted)
     {
-        
+        bool isCorrect = false;
+        if(answerSubmitted == answer)
+        {
+            isCorrect = true;
+        }
+        return isCorrect;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
