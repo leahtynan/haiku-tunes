@@ -9,6 +9,13 @@ public class PoemLineViewer : MonoBehaviour
     public Text clue;
     public Text poemLine;
 
+    public void ShowClue()
+    {
+        clue.enabled = true;
+        userInput.enabled = true;
+        poemLine.enabled = false;
+    }
+
     public void ShowSuccess()
     {
         // TODO:
@@ -17,14 +24,4 @@ public class PoemLineViewer : MonoBehaviour
         // Show line of Haiku
     }
 
-    public void ToggleLine(bool isShowing)
-    {
-        if(isShowing)
-        {
-            // TODO: Show the clue and input 
-        } else
-        {
-            // TODO: Hide the clue and input
-        }
-    }
 }
