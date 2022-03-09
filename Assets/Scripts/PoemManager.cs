@@ -6,11 +6,16 @@ public class PoemManager : MonoBehaviour
 {
     // References
     public PoemLineManager[] lines;
+    public PoemViewer poemViewer;
 
     // Poem content
-    public string[] haiku;
     public AudioClip[] musicalPhrases;
     public AudioClip fullSong;
+
+    void Start()
+    {
+        LoadLine(0);
+    }
 
     public void LoadLine(int lineNumber)
     {
@@ -24,10 +29,12 @@ public class PoemManager : MonoBehaviour
 
     public IEnumerator ShowPoem(float WaitTime)
     {
-        // TODO:
-        // Hide the input UI for the third line
+        foreach(PoemLineManager line in lines)
+        {
+            line.Toggle(false);
+        }
         yield return (WaitTime);
-        // Show the haiku
+        poemViewer.Toggle(true);
         // Play the full song, looping indefinitely
         // Provide UI to proceed to next poem
     }

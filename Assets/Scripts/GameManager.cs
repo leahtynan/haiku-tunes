@@ -10,7 +10,19 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        currentLine = 0;
         LoadPoem(0);
+        // Note: In the future, might consider randomizing poems if a lot of content is available.
+        // For now, just progress linearly
+    }
+
+    void LoadPoem(int poemNumber)
+    {
+        foreach (PoemManager poem in poemManagers)
+        {
+            poem.gameObject.SetActive(false);
+        }
+        poemManagers[poemNumber].gameObject.SetActive(true);
     }
 
     void Update()
@@ -23,26 +35,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadPoem(int poemNumber)
-    {
-        Debug.Log("Loading poem: " + currentPoem);
-        currentLine = 0;
-        poemManagers[currentPoem].LoadLine(currentLine);
-    }
-
     public IEnumerator ProgressPuzzle(float WaitTime)
     {
-        currentLine++;
-        Debug.Log("Moving to line " + currentLine);
-        //TODO:
-        // Run ShowSuccess(numberCluesSolved)
-        // If this is the first or second correct answer:
-        // Progress to the next piece of content after a short pause
-        yield return (WaitTime);
-        // If this is the third correct answer:
-        // Hide the input UI
-        // Show the haiku
-        // Play the full song
-        // UI to proceed to next poem
+        poemManagers[currentPoem].lines[currentLine].poemLineViewer.ShowSuccess();
+        // TODO: Play musical phrase for this poem's line n
+        yield return (2 * WaitTime); // TODO: Later, make this pause the length of the musical phrase, plus a little extra
+        if (currentLine == 2)
+        {
+            StartCoroutine(poemManagers[currentPoem].ShowPoem(1f));
+        }
+        else 
+        {
+            currentLine++;
+            Debug.Log("Moving to line " + currentLine);
+            poemManagers[currentPoem].LoadLine(currentLine);
+        }
     }
 }

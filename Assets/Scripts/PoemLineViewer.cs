@@ -20,8 +20,9 @@ public class PoemLineViewer : MonoBehaviour
     {
         // TODO:
         // Text for current clue’s input becomes green and non - interactable
-        // Play musical phrase for that clue/ answer set
-        // Show line of Haiku
+        clue.enabled = false;
+        userInput.enabled = false;
+        poemLine.enabled = true;
     }
 
 }
