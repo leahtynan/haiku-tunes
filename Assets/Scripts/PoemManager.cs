@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class PoemManager : MonoBehaviour
 {
-    // References
     public PoemLineManager[] lines;
     public PoemViewer poemViewer;
-
-    // Poem content
-    public AudioClip[] musicalPhrases;
     public AudioClip fullSong;
 
     void Start()
@@ -34,9 +30,7 @@ public class PoemManager : MonoBehaviour
             line.Toggle(false);
         }
         yield return (WaitTime);
-        poemViewer.Toggle(true);
-        // Play the full song, looping indefinitely
-        // Provide UI to proceed to next poem
+        poemViewer.Toggle(true); // In the future, could be something more fancy like a fade in or words appearing one-by-one
     }
 
 }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public PoemManager[] poemManagers;
     private int currentPoem;
     private int currentLine;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -38,11 +39,12 @@ public class GameManager : MonoBehaviour
     public IEnumerator ProgressPuzzle(float WaitTime)
     {
         poemManagers[currentPoem].lines[currentLine].poemLineViewer.ShowSuccess();
-        // TODO: Play musical phrase for this poem's line n
-        yield return (2 * WaitTime); // TODO: Later, make this pause the length of the musical phrase, plus a little extra
+        AssignAndPlayAudio(poemManagers[currentPoem].lines[currentLine].musicalPhrase);
+        yield return new WaitForSeconds(audioSource.clip.length + 2f);
         if (currentLine == 2)
         {
             StartCoroutine(poemManagers[currentPoem].ShowPoem(1f));
+            AssignAndPlayAudio(poemManagers[currentPoem].fullSong);
         }
         else 
         {
@@ -50,5 +52,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("Moving to line " + currentLine);
             poemManagers[currentPoem].LoadLine(currentLine);
         }
+    }
+
+    public void AssignAndPlayAudio(AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }

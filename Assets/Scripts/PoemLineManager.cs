@@ -5,6 +5,7 @@ using UnityEngine;
 public class PoemLineManager : MonoBehaviour
 {
     public PoemLineViewer poemLineViewer;
+    public AudioClip musicalPhrase;
     public string correctAnswer;
     public string userAnswer;
     public bool isAnsweredCorrectly; // The game manager checks this for true every frame to know when to proceed in the poem

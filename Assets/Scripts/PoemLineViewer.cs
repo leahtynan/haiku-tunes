@@ -12,7 +12,7 @@ public class PoemLineViewer : MonoBehaviour
     public void ShowClue()
     {
         clue.enabled = true;
-        userInput.enabled = true;
+        userInput.gameObject.SetActive(true);
         poemLine.enabled = false;
     }
 
@@ -21,7 +21,7 @@ public class PoemLineViewer : MonoBehaviour
         // TODO:
         // Text for current clue’s input becomes green and non - interactable
         clue.enabled = false;
-        userInput.enabled = false;
+        userInput.gameObject.SetActive(false);
         poemLine.enabled = true;
     }
 
