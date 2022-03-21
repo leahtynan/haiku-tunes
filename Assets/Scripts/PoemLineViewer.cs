@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class PoemLineViewer : MonoBehaviour
 {
-    public InputField userInput;
-    public Text clue;
-    public Text poemLine;
+    // TODO: Set up row of squares to fill letters in like a crossword puzzle
+    public Text clue; // The clue that the user receives for this poem line
+    public Text poemLine; // The line of the poem that shows after the correct answer is entered
+    public int position; // The square the user is typing into
 
     public void ShowClue()
     {
         clue.enabled = true;
-        userInput.gameObject.SetActive(true);
+        //foreach (InputField input in userInputs)
+        //{
+        //    input.gameObject.SetActive(true);
+        //}
         poemLine.enabled = false;
     }
 
@@ -21,7 +25,10 @@ public class PoemLineViewer : MonoBehaviour
         // TODO:
         // Text for current clue’s input becomes green and non - interactable
         clue.enabled = false;
-        userInput.gameObject.SetActive(false);
+        //foreach(InputField input in userInputs)
+        //{
+        //    input.gameObject.SetActive(false);
+        //}
         poemLine.enabled = true;
     }
 

@@ -10,8 +10,6 @@ public class PoemLineManager : MonoBehaviour
     public char[] correctAnswerLetters;
     public string userAnswer;
     public bool isAnsweredCorrectly; // The game manager checks this for true every frame to know when to proceed in the poem
-    // TODO: Number of letters in the answer? To give user extra clue. Also, may tie into UI like how crossword puzzles have number of visible cubes to fill.
-
 
     void Start()
     {
@@ -28,31 +26,33 @@ public class PoemLineManager : MonoBehaviour
     /* Checks that the answer entered for this poem line's clue is correct */
     public void CheckAnswer()
     {
-        // TODO: Modify this to loop through several inputs */
-        userAnswer = poemLineViewer.userInput.text;
-        int correctAnswerCounter = 0;
-        //while(correctAnswerCounter < correctAnswerLetters.Length + 1)
+        //if(poemLineViewer.userInputs[poemLineViewer.position].text == correctAnswerLetters[poemLineViewer.position].ToString())
+        //{
+        //    // Move over to the next tile
+        //    poemLineViewer.position++;
+        //}
+        //int correctAnswerCounter = 0;
+        //while (correctAnswerCounter < correctAnswerLetters.Length + 1)
         //{
         //    for (int i = 0; i < correctAnswerLetters.Length; i++)
         //    {
-        //        if (poemLineViewer.userInputs[i].text == correctAnswerLetters[i])
+        //        if (poemLineViewer.userInputs[i].text == correctAnswerLetters[i].ToString())
         //        {
         //            correctAnswerCounter++;
         //        }
         //    }
         //}
-        Debug.Log("User's answer: " + userAnswer);
-        if(userAnswer == correctAnswer)
-        {
-            isAnsweredCorrectly = true;
-            Debug.Log(userAnswer + " is correct");
-        } else
-        {
-            isAnsweredCorrectly = false;
-            Debug.Log(userAnswer + " is not correct");
-        }
- 
-    }
+        //Debug.Log("User's answer: " + userAnswer);
+        //if(userAnswer == correctAnswer)
+        //{
+        //    isAnsweredCorrectly = true;
+        //    Debug.Log(userAnswer + " is correct");
+        //} else
+        //{
+        //    isAnsweredCorrectly = false;
+        //    Debug.Log(userAnswer + " is not correct");
+        //}
+     }
 
     /* Hides/shows entire line, inputs, and clue contained by this game object */
     public void Toggle(bool isActive)
