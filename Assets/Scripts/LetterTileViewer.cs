@@ -9,11 +9,11 @@ public class LetterTileViewer : MonoBehaviour
 
     void Start()
     {
-        Clear();
+        Delete();
     }
 
     /* Removes the letter from the tile */
-    public void Clear()
+    public void Delete()
     {
         letter.text = "";
     }
