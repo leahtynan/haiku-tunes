@@ -16,6 +16,11 @@ public class PoemLineManager : MonoBehaviour
         GetInputLetterAnswers();
     }
 
+    void Update()
+    {
+        CheckAnswer();
+    }
+
     /* Splits the answer into individual letters that should be entered into each cube (like a crossword puzzle)
         e.g. "answer" -> "a", "n", "s", "w", "e", "r" */
     private void GetInputLetterAnswers()
@@ -26,11 +31,6 @@ public class PoemLineManager : MonoBehaviour
     /* Checks that the answer entered for this poem line's clue is correct */
     public void CheckAnswer()
     {
-        //if(poemLineViewer.userInputs[poemLineViewer.position].text == correctAnswerLetters[poemLineViewer.position].ToString())
-        //{
-        //    // Move over to the next tile
-        //    poemLineViewer.position++;
-        //}
         //int correctAnswerCounter = 0;
         //while (correctAnswerCounter < correctAnswerLetters.Length + 1)
         //{

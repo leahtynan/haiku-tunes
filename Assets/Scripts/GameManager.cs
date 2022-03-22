@@ -5,13 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public PoemManager[] poemManagers;
-    private int currentPoem;
-    private int currentLine;
+    private int currentPoem; // The poem the user is working on
+    private int currentLine; // The line in the poem the user is answering the clue for
+    private int currentTile; // The letter in the answer where the user will type next
     public AudioSource audioSource;
 
     void Start()
     {
-        currentLine = 0;
         LoadPoem(0);
         // Note: In the future, might consider randomizing poems if a lot of content is available.
         // For now, just progress linearly
@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
             poem.gameObject.SetActive(false);
         }
         poemManagers[poemNumber].gameObject.SetActive(true);
+        currentPoem = 0;
+        currentLine = 0;
+        currentTile = 0;
     }
 
     void Update()
@@ -34,6 +37,22 @@ public class GameManager : MonoBehaviour
             poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly = false;
             StartCoroutine(ProgressPuzzle(1f));
         }
+    }
+
+    public void EnterLetter(string letterPressed)
+    {
+        Debug.Log("Pressed the letter: " + letterPressed);
+        poemManagers[currentPoem].lines[currentLine].poemLineViewer.letterTiles[currentTile].Fill(letterPressed);
+        currentTile++;
+        Debug.Log("Current tile: " + currentTile);
+    }
+
+    public void Delete()
+    {
+        Debug.Log("Deleting letter");
+        poemManagers[currentPoem].lines[currentLine].poemLineViewer.letterTiles[currentTile - 1].Delete();
+        currentTile--;
+        Debug.Log("Current tile: " + currentTile);
     }
 
     public IEnumerator ProgressPuzzle(float WaitTime)

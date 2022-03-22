@@ -11,123 +11,112 @@ public class KeyboardManager : MonoBehaviour
         // TODO: Is there a more elegant way to do this?
         if (Input.GetKeyDown(KeyCode.A))
         {
-            EnterLetter("a");
+            gameManager.EnterLetter("a");
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
-            EnterLetter("b");
+            gameManager.EnterLetter("b");
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            EnterLetter("c");
+            gameManager.EnterLetter("c");
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            EnterLetter("d");
+            gameManager.EnterLetter("d");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            EnterLetter("e");
+            gameManager.EnterLetter("e");
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            EnterLetter("f");
+            gameManager.EnterLetter("f");
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            EnterLetter("g");
+            gameManager.EnterLetter("g");
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            EnterLetter("h");
+            gameManager.EnterLetter("h");
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
-            EnterLetter("i");
+            gameManager.EnterLetter("i");
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            EnterLetter("j");
+            gameManager.EnterLetter("j");
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            EnterLetter("k");
+            gameManager.EnterLetter("k");
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            EnterLetter("l");
+            gameManager.EnterLetter("l");
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
-            EnterLetter("m");
+            gameManager.EnterLetter("m");
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
-            EnterLetter("n");
+            gameManager.EnterLetter("n");
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
-            EnterLetter("o");
+            gameManager.EnterLetter("o");
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            EnterLetter("p");
+            gameManager.EnterLetter("p");
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            EnterLetter("q");
+            gameManager.EnterLetter("q");
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            EnterLetter("r");
+            gameManager.EnterLetter("r");
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            EnterLetter("s");
+            gameManager.EnterLetter("s");
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            EnterLetter("t");
+            gameManager.EnterLetter("t");
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
-            EnterLetter("u");
+            gameManager.EnterLetter("u");
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
-            EnterLetter("v");
+            gameManager.EnterLetter("v");
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            EnterLetter("w");
+            gameManager.EnterLetter("w");
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            EnterLetter("x");
+            gameManager.EnterLetter("x");
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            EnterLetter("y");
+            gameManager.EnterLetter("y");
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            EnterLetter("z");
+            gameManager.EnterLetter("z");
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Delete();
+            gameManager.Delete();
         }
     }
 
-    public void EnterLetter(string letterPressed)
-    {
-        Debug.Log("Pressed the letter: " + letterPressed);
-        //gameManager.poemManagers[poemNumber].lines[currentLine].viewer.letterTiles[position].Fill(letterPressed);
-    }
-
-    public void Delete()
-    {
-        Debug.Log("Deleting letter");
-        //gameManager.poemManagers[poemNumber].lines[currentLine].viewer.letterTiles[position].Delete();
-    }
 }

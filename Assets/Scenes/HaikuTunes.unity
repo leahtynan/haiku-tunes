@@ -334,9 +334,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clue: {fileID: 1840354760}
-  letterTiles: {fileID: 293062574}
+  letterTiles:
+  - {fileID: 2009263377}
+  - {fileID: 1135989612}
+  - {fileID: 736297206}
+  - {fileID: 284129642}
+  - {fileID: 130630926}
   poemLine: {fileID: 1124923515}
-  position: 0
 --- !u!114 &120280184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +372,7 @@ GameObject:
   - component: {fileID: 130630927}
   - component: {fileID: 130630926}
   m_Layer: 5
-  m_Name: LetterTile
+  m_Name: LetterTile4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +822,7 @@ GameObject:
   - component: {fileID: 284129643}
   - component: {fileID: 284129642}
   m_Layer: 5
-  m_Name: LetterTile
+  m_Name: LetterTile3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1518,7 +1522,7 @@ GameObject:
   - component: {fileID: 736297207}
   - component: {fileID: 736297206}
   m_Layer: 5
-  m_Name: LetterTile
+  m_Name: LetterTile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2087,9 +2091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clue: {fileID: 1577577654}
-  letterTiles: {fileID: 0}
+  letterTiles: []
   poemLine: {fileID: 859332558}
-  position: 0
 --- !u!1 &1102147238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,9 +2164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clue: {fileID: 1513379013}
-  letterTiles: {fileID: 0}
+  letterTiles: []
   poemLine: {fileID: 1468733839}
-  position: 0
 --- !u!1 &1124923513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,7 +2258,7 @@ GameObject:
   - component: {fileID: 1135989613}
   - component: {fileID: 1135989612}
   m_Layer: 5
-  m_Name: LetterTile
+  m_Name: LetterTile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3130,7 +3132,7 @@ GameObject:
   - component: {fileID: 2009263378}
   - component: {fileID: 2009263377}
   m_Layer: 5
-  m_Name: LetterTile
+  m_Name: LetterTile0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

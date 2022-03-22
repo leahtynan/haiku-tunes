@@ -19,8 +19,8 @@ public class LetterTileViewer : MonoBehaviour
     }
 
     /* Fills the letter tile with the letter the user typed */
-    public void Fill(char enteredLetter)
+    public void Fill(string enteredLetter)
     {
-        letter.text = enteredLetter.ToString();
+        letter.text = enteredLetter.ToUpper();
     }
 }
