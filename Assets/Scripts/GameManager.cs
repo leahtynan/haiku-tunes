@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Progress puzzle to next line");
             poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly = false;
-           // StartCoroutine(ProgressPuzzle(1f));
+            StartCoroutine(ProgressPuzzle(1f));
         }
     }
 

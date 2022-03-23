@@ -33,26 +33,19 @@ public class PoemLineManager : MonoBehaviour
     public void CheckAnswer()
     {
         int correctAnswerCounter = 0;
-        //while (correctAnswerCounter < correctAnswerLetters.Length + 1)
-        //{
-        //    for (int i = 0; i < correctAnswerLetters.Length; i++)
-        //    {
-        //        //if (poemLineViewer.userInputs[i].text == correctAnswerLetters[i].ToString())
-        //        //{
-        //        //    correctAnswerCounter++;
-        //        //}
-        //    }
-        //}
-        //Debug.Log("User's answer: " + userAnswer);
-        //if(userAnswer == correctAnswer)
-        //{
-        //    isAnsweredCorrectly = true;
-        //    Debug.Log(userAnswer + " is correct");
-        //} else
-        //{
-        //    isAnsweredCorrectly = false;
-        //    Debug.Log(userAnswer + " is not correct");
-        //}
+        for (int i = 0; i < correctAnswerLetters.Length; i++)
+        {
+            Debug.Log("Compared entered text " + poemLineViewer.letterTiles[i].letter.text + " to correct text " + correctAnswerLetters[i].ToString());
+            if (poemLineViewer.letterTiles[i].letter.text.ToLower() == correctAnswerLetters[i].ToString())
+            {
+                correctAnswerCounter++;
+            }
+        }
+        Debug.Log("Number of correct letters " + correctAnswerCounter);
+        if(correctAnswerCounter == correctAnswerLetters.Length)
+        {
+            isAnsweredCorrectly = true;
+        }
     }
 
     /* Hides/shows entire line, inputs, and clue contained by this game object */
