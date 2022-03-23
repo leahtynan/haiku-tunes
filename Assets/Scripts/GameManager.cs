@@ -35,16 +35,19 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Progress puzzle to next line");
             poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly = false;
-            StartCoroutine(ProgressPuzzle(1f));
+           // StartCoroutine(ProgressPuzzle(1f));
         }
     }
 
     public void EnterLetter(string letterPressed)
     {
-        Debug.Log("Pressed the letter: " + letterPressed);
+        Debug.Log("Pressed the letter: " + letterPressed + ", filling tile #" + currentTile);
         poemManagers[currentPoem].lines[currentLine].poemLineViewer.letterTiles[currentTile].Fill(letterPressed);
-        currentTile++;
-        Debug.Log("Current tile: " + currentTile);
+        Debug.Log(poemManagers[currentPoem].lines[currentLine].correctAnswerLetters.Length);
+        if(currentTile < poemManagers[currentPoem].lines[currentLine].correctAnswerLetters.Length - 1)
+        {
+            currentTile++;
+        }
     }
 
     public void Delete()

@@ -26,20 +26,21 @@ public class PoemLineManager : MonoBehaviour
     private void GetInputLetterAnswers()
     {
         correctAnswerLetters = correctAnswer.ToCharArray();
+        Debug.Log("The correct answer " + correctAnswer + " has " + correctAnswerLetters.Length + " letters.");
     }
 
     /* Checks that the answer entered for this poem line's clue is correct */
     public void CheckAnswer()
     {
-        //int correctAnswerCounter = 0;
+        int correctAnswerCounter = 0;
         //while (correctAnswerCounter < correctAnswerLetters.Length + 1)
         //{
         //    for (int i = 0; i < correctAnswerLetters.Length; i++)
         //    {
-        //        if (poemLineViewer.userInputs[i].text == correctAnswerLetters[i].ToString())
-        //        {
-        //            correctAnswerCounter++;
-        //        }
+        //        //if (poemLineViewer.userInputs[i].text == correctAnswerLetters[i].ToString())
+        //        //{
+        //        //    correctAnswerCounter++;
+        //        //}
         //    }
         //}
         //Debug.Log("User's answer: " + userAnswer);
@@ -52,7 +53,7 @@ public class PoemLineManager : MonoBehaviour
         //    isAnsweredCorrectly = false;
         //    Debug.Log(userAnswer + " is not correct");
         //}
-     }
+    }
 
     /* Hides/shows entire line, inputs, and clue contained by this game object */
     public void Toggle(bool isActive)
