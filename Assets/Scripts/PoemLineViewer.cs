@@ -19,10 +19,16 @@ public class PoemLineViewer : MonoBehaviour
         poemLine.enabled = false;
     }
 
-    public void ShowSuccess()
+    public IEnumerator ShowSuccess(float WaitTime)
     {
+        yield return new WaitForSeconds(WaitTime/2);
+        for (int i = 0; i < letterTiles.Length; i++)
+        {
+            letterTiles[i].ChangeColor(letterTiles[i].successColor);
+            yield return new WaitForSeconds(WaitTime/7);
+        }
+        yield return new WaitForSeconds(WaitTime * 2);
         clue.enabled = false;
-        // TODO: Later, have some success feedback/animation for the tiles
         foreach (LetterTileViewer letter in letterTiles)
         {
             letter.gameObject.SetActive(false);

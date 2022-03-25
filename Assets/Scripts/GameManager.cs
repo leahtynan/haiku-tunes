@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ProgressPuzzle(float WaitTime)
     {
-        poemManagers[currentPoem].lines[currentLine].poemLineViewer.ShowSuccess();
+        StartCoroutine(poemManagers[currentPoem].lines[currentLine].poemLineViewer.ShowSuccess(1f));
         AssignAndPlayAudio(poemManagers[currentPoem].lines[currentLine].musicalPhrase);
         yield return new WaitForSeconds(audioSource.clip.length + 2f);
         if (currentLine == 2)
@@ -70,9 +70,9 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            currentLine++;
-            Debug.Log("Moving to line " + currentLine);
-            poemManagers[currentPoem].LoadLine(currentLine);
+            //currentLine++;
+            //Debug.Log("Moving to line " + currentLine);
+            //poemManagers[currentPoem].LoadLine(currentLine);
         }
     }
 
