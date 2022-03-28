@@ -11,7 +11,7 @@ public class PoemLineManager : MonoBehaviour
     public string userAnswer;
     public bool isAnsweredCorrectly; // The game manager checks this for true every frame to know when to proceed in the poem
 
-    void Start()
+    void Awake()
     {
         GetInputLetterAnswers();
     }
@@ -26,7 +26,7 @@ public class PoemLineManager : MonoBehaviour
     private void GetInputLetterAnswers()
     {
         correctAnswerLetters = correctAnswer.ToCharArray();
-        Debug.Log("The correct answer " + correctAnswer + " has " + correctAnswerLetters.Length + " letters.");
+        //Debug.Log("The correct answer " + correctAnswer + " has " + correctAnswerLetters.Length + " letters.");
     }
 
     /* Checks that the answer entered for this poem line's clue is correct */
@@ -35,13 +35,13 @@ public class PoemLineManager : MonoBehaviour
         int correctAnswerCounter = 0;
         for (int i = 0; i < correctAnswerLetters.Length; i++)
         {
-            Debug.Log("Compared entered text " + poemLineViewer.letterTiles[i].letter.text + " to correct text " + correctAnswerLetters[i].ToString());
+            //Debug.Log("Compared entered text " + poemLineViewer.letterTiles[i].letter.text + " to correct text " + correctAnswerLetters[i].ToString());
             if (poemLineViewer.letterTiles[i].letter.text.ToLower() == correctAnswerLetters[i].ToString())
             {
                 correctAnswerCounter++;
             }
         }
-        Debug.Log("Number of correct letters " + correctAnswerCounter);
+        //Debug.Log("Number of correct letters " + correctAnswerCounter);
         if(correctAnswerCounter == correctAnswerLetters.Length)
         {
             isAnsweredCorrectly = true;

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int currentLine; // The line in the poem the user is answering the clue for
     private int currentTile; // The letter in the answer where the user will type next
     public AudioSource audioSource;
+    private bool isInteractable; // Whether the user can interact at the moment (as opposed to transitions among states)
 
     void Start()
     {
@@ -24,16 +25,18 @@ public class GameManager : MonoBehaviour
             poem.gameObject.SetActive(false);
         }
         poemManagers[poemNumber].gameObject.SetActive(true);
-        currentPoem = 0;
+        currentPoem = poemNumber;
         currentLine = 0;
         currentTile = 0;
+        isInteractable = true;
     }
 
     void Update()
     {
-        if(poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly)
+        if(isInteractable && poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly)
         {
             Debug.Log("Progress puzzle to next line");
+            isInteractable = false;
             poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly = false;
             StartCoroutine(ProgressPuzzle(1f));
         }
@@ -60,8 +63,10 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ProgressPuzzle(float WaitTime)
     {
+        Debug.Log("Progressing puzzle");
         StartCoroutine(poemManagers[currentPoem].lines[currentLine].poemLineViewer.ShowSuccess(1f));
         AssignAndPlayAudio(poemManagers[currentPoem].lines[currentLine].musicalPhrase);
+        currentTile = 0;
         yield return new WaitForSeconds(audioSource.clip.length + 2f);
         if (currentLine == 2)
         {
@@ -70,9 +75,10 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            //currentLine++;
-            //Debug.Log("Moving to line " + currentLine);
-            //poemManagers[currentPoem].LoadLine(currentLine);
+            currentLine++;
+            poemManagers[currentPoem].LoadLine(currentLine);
+            isInteractable = true;
+            Debug.Log("Moving to line " + currentLine);
         }
     }
 
