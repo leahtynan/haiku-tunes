@@ -5,11 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public PoemManager[] poemManagers;
+    public BackgroundArtViewer backgroundArtViewer;
     private int currentPoem; // The poem the user is working on
     private int currentLine; // The line in the poem the user is answering the clue for
     private int currentTile; // The letter in the answer where the user will type next
     public AudioSource audioSource;
     private bool isInteractable; // Whether the user can interact at the moment (as opposed to transitions among states)
+
 
     void Start()
     {
