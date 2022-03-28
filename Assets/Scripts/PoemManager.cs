@@ -8,7 +8,6 @@ public class PoemManager : MonoBehaviour
     public PoemViewer poemViewer;
     public AudioClip fullSong;
     public GameObject haiku;
-    public Sprite[] triptychPanelArt;
 
     void Start()
     {

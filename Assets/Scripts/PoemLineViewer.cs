@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class PoemLineViewer : MonoBehaviour
 {
-    // TODO: Rename the script to something else now that the line is not going to be shown until the end?
     public Text clue; // The clue that the user receives for this poem line
     public LetterTileViewer[] letterTiles; // All of the letter tiles for the user to fill
+    public Sprite backgroundImage; // 1920x1080 image that is the background when this poem line's puzzle is active
+    public Sprite triptychPanel; // 620x1080 version of the background image that shows when the entire haiku is revealed
 
     public void ShowClue()
     {
