@@ -181,6 +181,8 @@ MonoBehaviour:
   - {fileID: 850186882}
   - {fileID: 1791815309}
   - {fileID: 1698294087}
+  backgroundImage: {fileID: 0}
+  triptychPanel: {fileID: 0}
 --- !u!114 &120280184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poemLineViewer: {fileID: 120280183}
-  musicalPhrase: {fileID: 8300000, guid: b9c951aea8494244298661d618c47325, type: 3}
+  musicalPhrase: {fileID: 8300000, guid: d6dad1b39312223478e49255ea9baaaa, type: 3}
   correctAnswer: peace
   correctAnswerLetters: 
   userAnswer: 
@@ -669,7 +671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &242979916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2138,7 +2140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poemLineViewer: {fileID: 697032828}
-  musicalPhrase: {fileID: 8300000, guid: b9c951aea8494244298661d618c47325, type: 3}
+  musicalPhrase: {fileID: 8300000, guid: 556b30c6b49cf4043af36f33487e5b39, type: 3}
   correctAnswer: together
   correctAnswerLetters: 
   userAnswer: 
@@ -2165,6 +2167,8 @@ MonoBehaviour:
   - {fileID: 1504479442}
   - {fileID: 1138676251}
   - {fileID: 459615683}
+  backgroundImage: {fileID: 0}
+  triptychPanel: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,7 +3501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poemLineViewer: {fileID: 1283519259}
-  musicalPhrase: {fileID: 8300000, guid: b9c951aea8494244298661d618c47325, type: 3}
+  musicalPhrase: {fileID: 8300000, guid: 3379ae4d01f98b04d979f5db45712aa4, type: 3}
   correctAnswer: simple
   correctAnswerLetters: 
   userAnswer: 
@@ -3522,6 +3526,8 @@ MonoBehaviour:
   - {fileID: 994872785}
   - {fileID: 1391060818}
   - {fileID: 465311505}
+  backgroundImage: {fileID: 0}
+  triptychPanel: {fileID: 0}
 --- !u!1 &1319829156
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,9 +4411,8 @@ MonoBehaviour:
   - {fileID: 697032827}
   - {fileID: 1283519258}
   poemViewer: {fileID: 1785494537}
-  fullSong: {fileID: 8300000, guid: a28c7c63326eca54ab97b32cdd07d8e8, type: 3}
+  fullSong: {fileID: 8300000, guid: 2b9597b4b5ca60f4e97c6a8873b8d394, type: 3}
   haiku: {fileID: 1252230457}
-  triptychPanelArt: []
 --- !u!1 &1791815307
 GameObject:
   m_ObjectHideFlags: 0
