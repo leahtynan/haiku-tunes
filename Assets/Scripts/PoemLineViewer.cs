@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class PoemLineViewer : MonoBehaviour
 {
+    // TODO: Rename the script to something else now that the line is not going to be shown until the end?
     public Text clue; // The clue that the user receives for this poem line
     public LetterTileViewer[] letterTiles; // All of the letter tiles for the user to fill
-    public Text poemLine; // The line of the poem that shows after the correct answer is entered
 
     public void ShowClue()
     {
@@ -16,7 +16,6 @@ public class PoemLineViewer : MonoBehaviour
         {
             letter.gameObject.SetActive(true);
         }
-        poemLine.enabled = false;
     }
 
     public IEnumerator ShowSuccess(float WaitTime)
@@ -33,7 +32,6 @@ public class PoemLineViewer : MonoBehaviour
         {
             letter.gameObject.SetActive(false);
         }
-        poemLine.enabled = true;
     }
 
 }
