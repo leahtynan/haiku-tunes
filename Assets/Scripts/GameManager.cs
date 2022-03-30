@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         currentLine = 0;
         currentTile = 0;
         isInteractable = true;
+        backgroundArtViewer.SetUpSinglePanel();
     }
 
     void Update()
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(audioSource.clip.length);
         if (currentLine == 2)
         {
+            StartCoroutine(backgroundArtViewer.DisplayTriptych(1f));
             StartCoroutine(poemManagers[currentPoem].ShowPoem(1f));
             AssignAndPlayAudio(poemManagers[currentPoem].fullSong);
         }

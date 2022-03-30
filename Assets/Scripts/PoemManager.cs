@@ -33,7 +33,7 @@ public class PoemManager : MonoBehaviour
         }
         yield return (WaitTime);
         haiku.SetActive(true);
-        poemViewer.Toggle(true); // In the future, could be something more fancy like a fade in or words appearing one-by-one
+        poemViewer.Toggle(true); // TODO: Replace this basic toggle on with a typewriter effect
     }
 
 }
