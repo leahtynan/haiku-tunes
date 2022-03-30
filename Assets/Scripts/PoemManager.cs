@@ -6,6 +6,7 @@ public class PoemManager : MonoBehaviour
 {
     public PoemLineManager[] lines;
     public PoemViewer poemViewer;
+    public BackgroundArtViewer backgroundArtViewer;
     public AudioClip fullSong;
     public GameObject haiku;
 

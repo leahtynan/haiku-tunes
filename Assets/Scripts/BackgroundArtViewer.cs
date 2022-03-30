@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class BackgroundArtViewer : MonoBehaviour
 {
-    public Image singlePanel;
-    public Image[] triptychPanels;
+    public Image[] poemLinePuzzleBackgrounds; // 1920x1080 backgrounds that appear when solving poem line puzzles
+    public Image[] triptychPanels; // 620x1080 triptych panels that fade in left-to-right when the full poem is revealed
 
-    // TODO: Later on, soften this up with some fading effects
+    // TODO: Fades for these elements will go in new class
 
-    public void SetUpSinglePanel()
+    public void Initialize()
     {
-        singlePanel.enabled = true;
-        // TODO: Set image sprite to this poem's artwork
-        foreach(Image panel in triptychPanels)
+        // Show the background image for the first poem line puzzle 
+        foreach (Image background in poemLinePuzzleBackgrounds)
+        {
+            background.enabled = false;
+        }
+        poemLinePuzzleBackgrounds[0].enabled = true;
+        // Hide the full poem state's triptych panels
+        foreach (Image panel in triptychPanels)
         {
             panel.enabled = false;
         }
@@ -22,10 +27,12 @@ public class BackgroundArtViewer : MonoBehaviour
 
     public IEnumerator DisplayTriptych(float WaitTime)
     {
-        singlePanel.enabled = false;
-        foreach(Image panel in triptychPanels)
+        foreach (Image background in poemLinePuzzleBackgrounds)
         {
-            // TODO: Set image sprites to this poem's artwork
+            background.enabled = false;
+        }
+        foreach (Image panel in triptychPanels)
+        {
             panel.enabled = true;
             yield return new WaitForSeconds(WaitTime);
         }
