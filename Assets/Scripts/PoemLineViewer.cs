@@ -25,7 +25,7 @@ public class PoemLineViewer : MonoBehaviour
         for (int i = 0; i < letterTiles.Length; i++)
         {
             letterTiles[i].ChangeColor(letterTiles[i].successColor);
-            yield return new WaitForSeconds(WaitTime/7);
+            yield return new WaitForSeconds(WaitTime/8);
         }
         yield return new WaitForSeconds(WaitTime * 2);
         clue.enabled = false;

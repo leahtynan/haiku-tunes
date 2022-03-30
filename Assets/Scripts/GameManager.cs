@@ -65,11 +65,10 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ProgressPuzzle(float WaitTime)
     {
-        Debug.Log("Progressing puzzle");
         StartCoroutine(poemManagers[currentPoem].lines[currentLine].poemLineViewer.ShowSuccess(1f));
         AssignAndPlayAudio(poemManagers[currentPoem].lines[currentLine].musicalPhrase);
         currentTile = 0;
-        yield return new WaitForSeconds(audioSource.clip.length + 2f);
+        yield return new WaitForSeconds(audioSource.clip.length);
         if (currentLine == 2)
         {
             StartCoroutine(poemManagers[currentPoem].ShowPoem(1f));
@@ -80,7 +79,6 @@ public class GameManager : MonoBehaviour
             currentLine++;
             poemManagers[currentPoem].LoadLine(currentLine);
             isInteractable = true;
-            Debug.Log("Moving to line " + currentLine);
         }
     }
 

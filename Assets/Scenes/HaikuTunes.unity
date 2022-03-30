@@ -689,7 +689,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 64.89}
-  m_SizeDelta: {x: 1038.7, y: 109.7}
+  m_SizeDelta: {x: 1450, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242979917
 MonoBehaviour:
@@ -724,7 +724,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Clue for Alexandra''s poem, last line:'
+  m_Text: 'Without any kind of frills:'
 --- !u!222 &242979918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3563,7 +3563,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 64.89}
-  m_SizeDelta: {x: 1038.7, y: 109.7}
+  m_SizeDelta: {x: 1450, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319829158
 MonoBehaviour:
@@ -3598,7 +3598,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Clue for Alexandra''s poem, second line:'
+  m_Text: 'The Beatles song, "All __________ Now":'
 --- !u!222 &1319829159
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4620,7 +4620,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 64.89}
-  m_SizeDelta: {x: 1038.7, y: 109.7}
+  m_SizeDelta: {x: 1450, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840354760
 MonoBehaviour:
@@ -4655,7 +4655,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Clue for Alexandra''s poem, first line:'
+  m_Text: 'A synonym for harmony, may be preceded by "world":'
 --- !u!222 &1840354761
 CanvasRenderer:
   m_ObjectHideFlags: 0
