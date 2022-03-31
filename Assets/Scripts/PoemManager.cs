@@ -17,12 +17,16 @@ public class PoemManager : MonoBehaviour
 
     public void LoadLine(int lineNumber)
     {
-        //Debug.Log("Loading line # " + lineNumber);
-        foreach(PoemLineManager line in lines)
+        foreach (PoemLineManager line in lines)
         {
             line.Toggle(false);
         }
         lines[lineNumber].Toggle(true);
+        if (lineNumber > 0)
+        {
+            backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1f);
+            backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber].GetComponent<UIFader>().Fade(0, 1, 1f);
+        }
         lines[lineNumber].poemLineViewer.ShowClue();
     }
 

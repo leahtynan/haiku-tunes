@@ -7,9 +7,9 @@ public class UIFader : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
 
-    void Start()
+    void Awake()
     {
-        StartCoroutine(Fade(1, 0, 0.8f));
+        canvasGroup.alpha = 0;
     }
 
     public IEnumerator Fade(float start, float end, float duration)

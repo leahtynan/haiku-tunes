@@ -167,13 +167,15 @@ GameObject:
   - component: {fileID: 44332649}
   - component: {fileID: 44332651}
   - component: {fileID: 44332650}
+  - component: {fileID: 44332653}
+  - component: {fileID: 44332652}
   m_Layer: 5
   m_Name: Background_PoemLinePuzzle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &44332649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -231,6 +233,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44332648}
   m_CullTransparentMesh: 1
+--- !u!114 &44332652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44332648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1f0c7f94c5464a944db68d5c2a383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 44332653}
+--- !u!225 &44332653
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44332648}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &120280181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,13 +1337,15 @@ GameObject:
   - component: {fileID: 382942917}
   - component: {fileID: 382942919}
   - component: {fileID: 382942918}
+  - component: {fileID: 382942921}
+  - component: {fileID: 382942920}
   m_Layer: 5
   m_Name: Background_PoemLinePuzzle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &382942917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1349,7 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42762548, g: 0.735849, b: 0.65690374, a: 1}
+  m_Color: {r: 0.9245283, g: 0.5063974, b: 0.022677185, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1374,6 +1403,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382942916}
   m_CullTransparentMesh: 1
+--- !u!225 &382942920
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382942916}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &382942921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382942916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1f0c7f94c5464a944db68d5c2a383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 382942920}
 --- !u!1 &409968847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,7 +2626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 728332887}
-  duration: 2
 --- !u!225 &728332887
 CanvasGroup:
   m_ObjectHideFlags: 0
