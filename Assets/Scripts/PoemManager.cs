@@ -17,7 +17,7 @@ public class PoemManager : MonoBehaviour
 
     public void LoadLine(int lineNumber)
     {
-        Debug.Log("Loading line # " + lineNumber);
+        //Debug.Log("Loading line # " + lineNumber);
         foreach(PoemLineManager line in lines)
         {
             line.Toggle(false);

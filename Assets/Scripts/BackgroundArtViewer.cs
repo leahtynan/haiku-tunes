@@ -8,8 +8,6 @@ public class BackgroundArtViewer : MonoBehaviour
     public Image[] poemLinePuzzleBackgrounds; // 1920x1080 backgrounds that appear when solving poem line puzzles
     public Image[] triptychPanels; // 620x1080 triptych panels that fade in left-to-right when the full poem is revealed
 
-    // TODO: Fades for these elements will go in new class
-
     public void Initialize()
     {
         // Show the background image for the first poem line puzzle 
