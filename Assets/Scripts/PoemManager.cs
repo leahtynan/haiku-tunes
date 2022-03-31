@@ -24,8 +24,9 @@ public class PoemManager : MonoBehaviour
         lines[lineNumber].Toggle(true);
         if (lineNumber > 0)
         {
-            backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1f);
-            backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber].GetComponent<UIFader>().Fade(0, 1, 1f);
+            Debug.Log("Crossfading background art");
+            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1.5f));
+            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber].GetComponent<UIFader>().Fade(0, 1, 1.5f));
         }
         lines[lineNumber].poemLineViewer.ShowClue();
     }
