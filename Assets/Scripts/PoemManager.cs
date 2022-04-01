@@ -39,7 +39,8 @@ public class PoemManager : MonoBehaviour
         }
         yield return (WaitTime);
         haiku.SetActive(true);
-        poemViewer.Toggle(true); // TODO: Replace this basic toggle on with a typewriter effect
+        poemViewer.Toggle(true);
+        StartCoroutine(poemViewer.TypePoem());
     }
 
 }
