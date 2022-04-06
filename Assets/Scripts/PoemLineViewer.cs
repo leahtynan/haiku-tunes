@@ -24,7 +24,7 @@ public class PoemLineViewer : MonoBehaviour
         yield return new WaitForSeconds(WaitTime/2);
         for (int i = 0; i < letterTiles.Length; i++)
         {
-            letterTiles[i].ChangeColor(letterTiles[i].successColor);
+            letterTiles[i].ShowSuccessLook();
             yield return new WaitForSeconds(WaitTime/8);
         }
         yield return new WaitForSeconds(WaitTime * 2);

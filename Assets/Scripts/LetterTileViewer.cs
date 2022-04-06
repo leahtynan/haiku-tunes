@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class LetterTileViewer : MonoBehaviour
 {
     public Image background;
+    public Sprite defaultLook;
+    public Sprite successLook;
     public Text letter;
-    public Color defaultColor;
-    public Color successColor;
 
     void Start()
     {
         Delete();
-        ChangeColor(defaultColor);
+        ShowDefaultLook();
     }
 
     /* Removes the letter from the tile */
@@ -28,10 +28,15 @@ public class LetterTileViewer : MonoBehaviour
         letter.text = enteredLetter.ToUpper();
     }
 
-    /* Change tile color to green as part of success animation */
-    // TODO: Might do something else later with graphics/animation
-    public void ChangeColor(Color color)
+    /* Change the tile background to plain white */
+    public void ShowDefaultLook()
     {
-        background.color = color;
+        background.sprite = defaultLook;
+    }
+
+    /* Change the tile background to a green gradient look as part of success animation */
+    public void ShowSuccessLook()
+    {
+        background.sprite = successLook;
     }
 }
