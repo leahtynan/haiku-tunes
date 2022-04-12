@@ -68,9 +68,12 @@ public class GameManager : MonoBehaviour
     /* Deletes the letter from the current tile and moves to the previous tile */
     public void Delete()
     {
-        Debug.Log("Deleting letter");
-        poemManagers[currentPoem].lines[currentLine].poemLineViewer.letterTiles[currentTile - 1].Delete();
-        currentTile--;
+        Debug.Log("Deleting letter at position: " + currentTile);
+        poemManagers[currentPoem].lines[currentLine].poemLineViewer.letterTiles[currentTile].Delete();
+        if (currentTile > 0)
+        {
+            currentTile--;
+        }
         Debug.Log("Current tile: " + currentTile);
     }
 
