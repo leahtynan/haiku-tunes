@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5605450}
   m_Layer: 0
-  m_Name: PoemLinePuzzles
+  m_Name: Puzzles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,10 +267,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 120280182}
-  - component: {fileID: 120280183}
   - component: {fileID: 120280184}
+  - component: {fileID: 120280183}
   m_Layer: 0
-  m_Name: PoemLinePuzzle_0
+  m_Name: Puzzle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 120280181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dfd0db25e526c4f9da2b86978918da, type: 3}
+  m_Script: {fileID: 11500000, guid: 70998c21d5c4ae6479b730b9cd08699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clue: {fileID: 1840354760}
@@ -316,8 +316,8 @@ MonoBehaviour:
   - {fileID: 850186882}
   - {fileID: 1791815309}
   - {fileID: 1698294087}
-  backgroundImage: {fileID: 0}
-  triptychPanel: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 7afa133b34ee1a644b595ac6f585688e, type: 3}
+  triptychPanel: {fileID: 21300000, guid: 0241b69984d2ec549bc19978cadac969, type: 3}
 --- !u!114 &120280184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,10 +327,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 120280181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50319a9c7c854ba479e87a7950000014, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poemLineViewer: {fileID: 120280183}
+  puzzleViewer: {fileID: 120280183}
   musicalPhrase: {fileID: 8300000, guid: d6dad1b39312223478e49255ea9baaaa, type: 3}
   correctAnswer: peace
   correctAnswerLetters: 
@@ -2647,7 +2647,7 @@ GameObject:
   - component: {fileID: 697032828}
   - component: {fileID: 697032827}
   m_Layer: 0
-  m_Name: PoemLinePuzzle_1
+  m_Name: Puzzle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2683,25 +2683,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 697032825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50319a9c7c854ba479e87a7950000014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poemLineViewer: {fileID: 697032828}
-  musicalPhrase: {fileID: 8300000, guid: 556b30c6b49cf4043af36f33487e5b39, type: 3}
-  correctAnswer: together
-  correctAnswerLetters: 
-  userAnswer: 
-  isAnsweredCorrectly: 0
---- !u!114 &697032828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697032825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dfd0db25e526c4f9da2b86978918da, type: 3}
+  m_Script: {fileID: 11500000, guid: 70998c21d5c4ae6479b730b9cd08699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clue: {fileID: 1319829158}
@@ -2714,8 +2696,26 @@ MonoBehaviour:
   - {fileID: 1504479442}
   - {fileID: 1138676251}
   - {fileID: 459615683}
-  backgroundImage: {fileID: 0}
-  triptychPanel: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
+  triptychPanel: {fileID: 21300000, guid: b97d9c1c6a6e6a5468199fbe97633164, type: 3}
+--- !u!114 &697032828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697032825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleViewer: {fileID: 697032827}
+  musicalPhrase: {fileID: 8300000, guid: 556b30c6b49cf4043af36f33487e5b39, type: 3}
+  correctAnswer: together
+  correctAnswerLetters: 
+  userAnswer: 
+  isAnsweredCorrectly: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4115,7 @@ GameObject:
   - component: {fileID: 1283519259}
   - component: {fileID: 1283519258}
   m_Layer: 0
-  m_Name: PoemLinePuzzle_2
+  m_Name: Puzzle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4151,25 +4151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283519256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50319a9c7c854ba479e87a7950000014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poemLineViewer: {fileID: 1283519259}
-  musicalPhrase: {fileID: 8300000, guid: 3379ae4d01f98b04d979f5db45712aa4, type: 3}
-  correctAnswer: simple
-  correctAnswerLetters: 
-  userAnswer: 
-  isAnsweredCorrectly: 0
---- !u!114 &1283519259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283519256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dfd0db25e526c4f9da2b86978918da, type: 3}
+  m_Script: {fileID: 11500000, guid: 70998c21d5c4ae6479b730b9cd08699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clue: {fileID: 242979917}
@@ -4180,8 +4162,26 @@ MonoBehaviour:
   - {fileID: 994872785}
   - {fileID: 1391060818}
   - {fileID: 465311505}
-  backgroundImage: {fileID: 0}
-  triptychPanel: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
+  triptychPanel: {fileID: 21300000, guid: b8d111ce1f9c641488d227b833f7b431, type: 3}
+--- !u!114 &1283519259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283519256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleViewer: {fileID: 1283519258}
+  musicalPhrase: {fileID: 8300000, guid: 3379ae4d01f98b04d979f5db45712aa4, type: 3}
+  correctAnswer: simple
+  correctAnswerLetters: 
+  userAnswer: 
+  isAnsweredCorrectly: 0
 --- !u!1 &1319829156
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,10 +5274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f028499d14bfaf4094f1c3d4ade6292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
+  puzzles:
   - {fileID: 120280184}
-  - {fileID: 697032827}
-  - {fileID: 1283519258}
+  - {fileID: 697032828}
+  - {fileID: 1283519259}
   poemViewer: {fileID: 1785494537}
   backgroundArtViewer: {fileID: 1225588730}
   fullSong: {fileID: 8300000, guid: 2b9597b4b5ca60f4e97c6a8873b8d394, type: 3}

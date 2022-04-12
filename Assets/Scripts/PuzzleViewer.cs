@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PoemLineViewer : MonoBehaviour
+public class PuzzleViewer : MonoBehaviour
 {
     public Text clue; // The clue that the user receives for this poem line
     public LetterTileViewer[] letterTiles; // All of the letter tiles for the user to fill
@@ -14,7 +14,7 @@ public class PoemLineViewer : MonoBehaviour
     public void ShowClueAndTiles()
     {
         clue.enabled = true;
-        foreach(LetterTileViewer letter in letterTiles)
+        foreach (LetterTileViewer letter in letterTiles)
         {
             letter.gameObject.SetActive(true);
         }
@@ -23,11 +23,11 @@ public class PoemLineViewer : MonoBehaviour
     /* Animates tiles from left-to-right when the correct answer is entered */
     public IEnumerator ShowSuccess(float WaitTime)
     {
-        yield return new WaitForSeconds(WaitTime/2);
+        yield return new WaitForSeconds(WaitTime / 2);
         for (int i = 0; i < letterTiles.Length; i++)
         {
             letterTiles[i].ShowSuccessLook();
-            yield return new WaitForSeconds(WaitTime/8);
+            yield return new WaitForSeconds(WaitTime / 8);
         }
         yield return new WaitForSeconds(WaitTime * 2);
         clue.enabled = false;
@@ -36,5 +36,4 @@ public class PoemLineViewer : MonoBehaviour
             letter.gameObject.SetActive(false);
         }
     }
-
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoemManager : MonoBehaviour
 {
-    public PoemLineManager[] lines;
+    public PuzzleManager[] puzzles;
     public PoemViewer poemViewer;
     public BackgroundArtViewer backgroundArtViewer;
     public AudioClip fullSong;
@@ -12,31 +12,31 @@ public class PoemManager : MonoBehaviour
 
     void Start()
     {
-        LoadLine(0);
+        LoadPuzzle(0);
     }
 
     /* Progress to the next puzzle in the sequence of three puzzles */
-    public void LoadLine(int lineNumber)
+    public void LoadPuzzle(int number)
     {
-        foreach (PoemLineManager line in lines)
+        foreach (PuzzleManager puzzle in puzzles)
         {
-            line.Toggle(false);
+            puzzle.Toggle(false);
         }
-        lines[lineNumber].Toggle(true);
-        if (lineNumber > 0)
+        puzzles[number].Toggle(true);
+        if (number > 0)
         {
-            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1.5f));
-            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[lineNumber].GetComponent<UIFader>().Fade(0, 1, 1.5f));
+            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[number - 1].GetComponent<UIFader>().Fade(1, 0, 1.5f));
+            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[number].GetComponent<UIFader>().Fade(0, 1, 1.5f));
         }
-        lines[lineNumber].poemLineViewer.ShowClueAndTiles();
+        puzzles[number].puzzleViewer.ShowClueAndTiles();
     }
 
     /* Hide all puzzle UI and initialize poem reveal */
     public IEnumerator ShowPoem(float WaitTime)
     {
-        foreach(PoemLineManager line in lines)
+        foreach(PuzzleManager puzzle in puzzles)
         {
-            line.Toggle(false);
+            puzzle.Toggle(false);
         }
         yield return (WaitTime);
         poemViewer.Toggle(true);

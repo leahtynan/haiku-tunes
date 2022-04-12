@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoemLineManager : MonoBehaviour
+public class PuzzleManager : MonoBehaviour
 {
-    public PoemLineViewer poemLineViewer;
+    public PuzzleViewer puzzleViewer;
     public AudioClip musicalPhrase;
     public string correctAnswer;
     public char[] correctAnswerLetters;
@@ -36,13 +36,13 @@ public class PoemLineManager : MonoBehaviour
         for (int i = 0; i < correctAnswerLetters.Length; i++)
         {
             //Debug.Log("Compared entered text " + poemLineViewer.letterTiles[i].letter.text + " to correct text " + correctAnswerLetters[i].ToString());
-            if (poemLineViewer.letterTiles[i].letter.text.ToLower() == correctAnswerLetters[i].ToString())
+            if (puzzleViewer.letterTiles[i].letter.text.ToLower() == correctAnswerLetters[i].ToString())
             {
                 correctAnswerCounter++;
             }
         }
         //Debug.Log("Number of correct letters " + correctAnswerCounter);
-        if(correctAnswerCounter == correctAnswerLetters.Length)
+        if (correctAnswerCounter == correctAnswerLetters.Length)
         {
             isAnsweredCorrectly = true;
         }
@@ -53,5 +53,4 @@ public class PoemLineManager : MonoBehaviour
     {
         this.gameObject.SetActive(isActive);
     }
-
 }

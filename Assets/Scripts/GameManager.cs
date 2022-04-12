@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Play Data")]
     private int currentPoem; // The poem the user is working on
-    private int currentLine; // The line in the poem the user is answering the clue for
+    private int currentPuzzle; // The puzzle the user is solving (out of 3 total puzzles per poem)
     private int currentTile; // The letter in the answer where the user will type next
     private bool isInteractable; // Whether the user can interact at the moment (i.e. UI isn't in transition)
     private bool isShowingHaiku; // Whether the user is still on the haiku (the final state) - condition for continuing to loop audio
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         poemManagers[poemNumber].backgroundArtViewer.Initialize();
         nextButton.GetComponent<CanvasGroup>().alpha = 0;
         currentPoem = poemNumber;
-        currentLine = 0;
+        currentPuzzle = 0;
         currentTile = 0;
         isInteractable = true;
         isShowingHaiku = false;
@@ -44,11 +44,10 @@ public class GameManager : MonoBehaviour
     /* Continuously checks for correctly entered answers */
     void Update()
     {
-        if(isInteractable && poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly)
+        if(isInteractable && poemManagers[currentPoem].puzzles[currentPuzzle].isAnsweredCorrectly)
         {
-            Debug.Log("Progress puzzle to next line");
             isInteractable = false;
-            poemManagers[currentPoem].lines[currentLine].isAnsweredCorrectly = false;
+            poemManagers[currentPoem].puzzles[currentPuzzle].isAnsweredCorrectly = false;
             StartCoroutine(ProgressPuzzle(1f));
         }
     }
@@ -57,9 +56,9 @@ public class GameManager : MonoBehaviour
     public void EnterLetter(string letterPressed)
     {
         Debug.Log("Pressed the letter: " + letterPressed + ", filling tile #" + currentTile);
-        poemManagers[currentPoem].lines[currentLine].poemLineViewer.letterTiles[currentTile].Fill(letterPressed);
-        Debug.Log(poemManagers[currentPoem].lines[currentLine].correctAnswerLetters.Length);
-        if(currentTile < poemManagers[currentPoem].lines[currentLine].correctAnswerLetters.Length - 1)
+        poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Fill(letterPressed);
+        Debug.Log(poemManagers[currentPoem].puzzles[currentPuzzle].correctAnswerLetters.Length);
+        if(currentTile < poemManagers[currentPoem].puzzles[currentPuzzle].correctAnswerLetters.Length - 1)
         {
             currentTile++;
         }
@@ -69,7 +68,7 @@ public class GameManager : MonoBehaviour
     public void Delete()
     {
         Debug.Log("Deleting letter at position: " + currentTile);
-        poemManagers[currentPoem].lines[currentLine].poemLineViewer.letterTiles[currentTile].Delete();
+        poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Delete();
         if (currentTile > 0)
         {
             currentTile--;
@@ -80,11 +79,11 @@ public class GameManager : MonoBehaviour
     /* Transitions to the next poem line puzzle or (if the last clue was solved) show the poem and offer option to solve next one */
     public IEnumerator ProgressPuzzle(float WaitTime)
     {
-        StartCoroutine(poemManagers[currentPoem].lines[currentLine].poemLineViewer.ShowSuccess(1f));
-        AssignAndPlayAudio(poemManagers[currentPoem].lines[currentLine].musicalPhrase);
+        StartCoroutine(poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.ShowSuccess(1f));
+        AssignAndPlayAudio(poemManagers[currentPoem].puzzles[currentPuzzle].musicalPhrase);
         currentTile = 0;
         yield return new WaitForSeconds(audioSource.clip.length);
-        if (currentLine == 2)
+        if (currentPuzzle == 2)
         {
             isShowingHaiku = true;
             float timePoemShowing = 0f;
@@ -101,8 +100,8 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            currentLine++;
-            poemManagers[currentPoem].LoadLine(currentLine);
+            currentPuzzle++;
+            poemManagers[currentPoem].LoadPuzzle(currentPuzzle);
             isInteractable = true;
         }
     }
