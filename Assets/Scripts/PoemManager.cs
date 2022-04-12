@@ -40,7 +40,7 @@ public class PoemManager : MonoBehaviour
         yield return (WaitTime);
         haiku.SetActive(true);
         poemViewer.Toggle(true);
-        StartCoroutine(poemViewer.TypePoem());
+        StartCoroutine(poemViewer.RevealPoem());
     }
 
 }

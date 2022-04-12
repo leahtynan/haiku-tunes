@@ -14,11 +14,26 @@ public class PoemViewer : MonoBehaviour
     void Start()
     {
         Toggle(false);
+        for(int i = 0; i < haikuLines.Length; i++)
+        {
+            haikuLines[i].text = fullText[i];
+            haikuLines[i].GetComponent<CanvasGroup>().alpha = 0;
+        }
     }
 
     public void Toggle(bool isShowing)
     {
         haiku.SetActive(isShowing);
+    }
+
+    public IEnumerator RevealPoem()
+    {
+        Debug.Log("revealing poem");
+        for (int i = 0; i < 3; i++)
+        {
+            StartCoroutine(haikuLines[i].GetComponent<UIFader>().Fade(0, 1, 1.5f));
+            yield return new WaitForSeconds(1.5f);
+        }
     }
 
     public IEnumerator TypeLine(int lineNumber)
