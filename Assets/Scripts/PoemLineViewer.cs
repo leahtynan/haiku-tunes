@@ -10,7 +10,8 @@ public class PoemLineViewer : MonoBehaviour
     public Sprite backgroundImage; // 1920x1080 image that is the background when this poem line's puzzle is active
     public Sprite triptychPanel; // 620x1080 version of the background image that shows when the entire haiku is revealed
 
-    public void ShowClue()
+    /* Shows the clue of the puzzle and tiles to fill in its answer */
+    public void ShowClueAndTiles()
     {
         clue.enabled = true;
         foreach(LetterTileViewer letter in letterTiles)
@@ -19,6 +20,7 @@ public class PoemLineViewer : MonoBehaviour
         }
     }
 
+    /* Animates tiles from left-to-right when the correct answer is entered */
     public IEnumerator ShowSuccess(float WaitTime)
     {
         yield return new WaitForSeconds(WaitTime/2);

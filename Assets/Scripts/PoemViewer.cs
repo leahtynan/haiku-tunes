@@ -21,14 +21,16 @@ public class PoemViewer : MonoBehaviour
         }
     }
 
+    /* Hides/shows entire haiku game oject */
     public void Toggle(bool isShowing)
     {
         haiku.SetActive(isShowing);
     }
 
+    /* Reveals the haiku by revealing the text line-by-line */
     public IEnumerator RevealPoem()
     {
-        Debug.Log("revealing poem");
+        Toggle(true);
         for (int i = 0; i < 3; i++)
         {
             StartCoroutine(haikuLines[i].GetComponent<UIFader>().Fade(0, 1, 1.5f));
@@ -36,6 +38,7 @@ public class PoemViewer : MonoBehaviour
         }
     }
 
+    /* Types out the line of the haiku letter-by-letter; this functionality is currently un-used */
     public IEnumerator TypeLine(int lineNumber)
     {
         for(int i = 0; i < fullText[lineNumber].Length; i++)
@@ -46,6 +49,7 @@ public class PoemViewer : MonoBehaviour
         }
     }
 
+    /* Types out all three lines of the haiku letter-by-letter; this functionality is currently un-used */
     public IEnumerator TypePoem()
     {
         for(int i = 0; i < 3; i++)

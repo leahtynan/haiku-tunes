@@ -7,6 +7,7 @@ public class UIFader : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
 
+    /* Fades canvas group in/out over a specified time */
     public IEnumerator Fade(float start, float end, float duration)
     {
         float timeElapsed = 0f;
