@@ -39,6 +39,16 @@ public class GameManager : MonoBehaviour
         currentTile = 0;
         isInteractable = true;
         isShowingHaiku = false;
+        audioSource.loop = false;
+    }
+
+    /* Moves to next poem. This is used as a callback upon pressing the "Next" button in the haiku state of a poem */
+    public void GoToNextPoem()
+    {
+        audioSource.Stop();
+        currentPoem++;
+        ShowNextButton(false);
+        LoadPoem(currentPoem);
     }
 
     /* Continuously checks for correctly entered answers */
@@ -91,12 +101,8 @@ public class GameManager : MonoBehaviour
             StartCoroutine(poemManagers[currentPoem].ShowPoem(1f));
             AssignAndPlayAudio(poemManagers[currentPoem].fullSong);
             yield return new WaitForSeconds(audioSource.clip.length - 1f); // Wait until a second before the song finishes playing
-            ShowNextButton();
-            // TODO: Loop the song until the user presses the "Next" button
-            // while(showingHaiku) {
-            //
-            // }
- 
+            ShowNextButton(true);
+            audioSource.loop = true;
         }
         else 
         {
@@ -113,9 +119,15 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
     }
 
-    /* Fades in the "Next" button that enables user to move to next poem */
-    public void ShowNextButton()
+    /* Fades in/out the "Next" button */
+    public void ShowNextButton(bool isShowing)
     {
-        StartCoroutine(nextButton.GetComponent<UIFader>().Fade(0, 1, 1f));
+        if(isShowing)
+        {
+            StartCoroutine(nextButton.GetComponent<UIFader>().Fade(0, 1, 1f));
+        } else
+        {
+            StartCoroutine(nextButton.GetComponent<UIFader>().Fade(1, 0, 1f));
+        }
     }
 }
