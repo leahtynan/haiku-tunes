@@ -6,6 +6,7 @@ public class PuzzleManager : MonoBehaviour
 {
     public PuzzleViewer puzzleViewer;
     public AudioClip musicalPhrase;
+    public string clue;
     public string correctAnswer;
     public char[] correctAnswerLetters;
     public string userAnswer;
@@ -14,11 +15,18 @@ public class PuzzleManager : MonoBehaviour
     void Awake()
     {
         GetInputLetterAnswers();
+        puzzleViewer.clueUI.text = clue;
     }
 
     void Update()
     {
         CheckAnswer();
+    }
+
+    /* Fill the text UI for the clue with the clue content */
+    private void LoadClue()
+    {
+        puzzleViewer.clueUI.text = clue;
     }
 
     /* Splits the answer into individual letters that should be entered into each cube (like a crossword puzzle)

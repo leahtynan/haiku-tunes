@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PuzzleViewer : MonoBehaviour
 {
-    public Text clue; // The clue that the user receives for this poem line
+    public Text clueUI; // Text showing the clue for this puzzle
     public LetterTileViewer[] letterTiles; // All of the letter tiles for the user to fill
     public Sprite backgroundImage; // 1920x1080 image that is the background when this poem line's puzzle is active
     public Sprite triptychPanel; // 620x1080 version of the background image that shows when the entire haiku is revealed
@@ -13,7 +13,7 @@ public class PuzzleViewer : MonoBehaviour
     /* Shows the clue of the puzzle and tiles to fill in its answer */
     public void ShowClueAndTiles()
     {
-        clue.enabled = true;
+        clueUI.enabled = true;
         foreach (LetterTileViewer letter in letterTiles)
         {
             letter.gameObject.SetActive(true);
@@ -30,7 +30,7 @@ public class PuzzleViewer : MonoBehaviour
             yield return new WaitForSeconds(WaitTime / 8);
         }
         yield return new WaitForSeconds(WaitTime * 2);
-        clue.enabled = false;
+        clueUI.enabled = false;
         foreach (LetterTileViewer letter in letterTiles)
         {
             letter.gameObject.SetActive(false);
