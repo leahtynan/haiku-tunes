@@ -25,8 +25,8 @@ public class PoemManager : MonoBehaviour
         puzzles[number].Toggle(true);
         if (number > 0)
         {
-            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[number - 1].GetComponent<UIFader>().Fade(1, 0, 1.5f));
-            StartCoroutine(backgroundArtViewer.poemLinePuzzleBackgrounds[number].GetComponent<UIFader>().Fade(0, 1, 1.5f));
+            StartCoroutine(backgroundArtViewer.backgroundUI[number - 1].GetComponent<UIFader>().Fade(1, 0, 1.5f));
+            StartCoroutine(backgroundArtViewer.backgroundUI[number].GetComponent<UIFader>().Fade(0, 1, 1.5f));
         }
         puzzles[number].puzzleViewer.ShowClueAndTiles();
     }

@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 44332653}
   - component: {fileID: 44332652}
   m_Layer: 5
-  m_Name: Background_PoemLinePuzzle_1
+  m_Name: Background_Puzzle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b97d9c1c6a6e6a5468199fbe97633164, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2438,7 +2438,7 @@ GameObject:
   - component: {fileID: 370664997}
   - component: {fileID: 370664996}
   m_Layer: 5
-  m_Name: Background_PoemLinePuzzle_1
+  m_Name: Background_Puzzle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2508,7 +2508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2870,7 +2870,7 @@ GameObject:
   - component: {fileID: 382942921}
   - component: {fileID: 382942920}
   m_Layer: 5
-  m_Name: Background_PoemLinePuzzle_2
+  m_Name: Background_Puzzle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2915,7 +2915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e717c229d538bd74ea410bd664af4ab0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3214,7 +3214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0241b69984d2ec549bc19978cadac969, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3493,7 +3493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 459993740}
   m_Layer: 0
-  m_Name: Backgrounds_PoemLinePuzzles
+  m_Name: Backgrounds_Puzzles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3628,7 +3628,7 @@ GameObject:
   - component: {fileID: 465363309}
   - component: {fileID: 465363308}
   m_Layer: 5
-  m_Name: Background_PoemLinePuzzle_0
+  m_Name: Background_Puzzle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3698,7 +3698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7afa133b34ee1a644b595ac6f585688e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4355,8 +4355,8 @@ MonoBehaviour:
   - {fileID: 1714238389}
   - {fileID: 963341206}
   - {fileID: 1974052388}
-  backgroundImage: {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
-  triptychPanel: {fileID: 21300000, guid: b8d111ce1f9c641488d227b833f7b431, type: 3}
+  backgroundImage: {fileID: 21300000, guid: 97993bec06b58e14a8db706fb63f1b25, type: 3}
+  triptychPanel: {fileID: 21300000, guid: 70a61238498130742930f0820a002637, type: 3}
 --- !u!114 &587864859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4503,8 +4503,8 @@ MonoBehaviour:
   - {fileID: 1822361088}
   - {fileID: 1070989863}
   - {fileID: 1187801669}
-  backgroundImage: {fileID: 21300000, guid: 7afa133b34ee1a644b595ac6f585688e, type: 3}
-  triptychPanel: {fileID: 21300000, guid: 0241b69984d2ec549bc19978cadac969, type: 3}
+  backgroundImage: {fileID: 21300000, guid: a632c305faf4358408c0677f2de23a58, type: 3}
+  triptychPanel: {fileID: 21300000, guid: 2eb1b8ff39d400d4b93214d31aec7f6b, type: 3}
 --- !u!114 &600929500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4899,7 +4899,7 @@ MonoBehaviour:
   - {fileID: 1909914928}
   - {fileID: 2079278196}
   backgroundImage: {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
-  triptychPanel: {fileID: 21300000, guid: b97d9c1c6a6e6a5468199fbe97633164, type: 3}
+  triptychPanel: {fileID: 21300000, guid: 3e8a17efdf80d5e498ca9807a7be5621, type: 3}
 --- !u!114 &632111141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5569,7 +5569,7 @@ GameObject:
   - component: {fileID: 728332886}
   - component: {fileID: 728332887}
   m_Layer: 5
-  m_Name: Background_PoemLinePuzzle_0
+  m_Name: Background_Puzzle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5614,7 +5614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7afa133b34ee1a644b595ac6f585688e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5716,7 +5716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b8d111ce1f9c641488d227b833f7b431, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6503,7 +6503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b97d9c1c6a6e6a5468199fbe97633164, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6628,7 +6628,7 @@ GameObject:
   - component: {fileID: 1090092167}
   - component: {fileID: 1090092166}
   m_Layer: 5
-  m_Name: Background_PoemLinePuzzle_2
+  m_Name: Background_Puzzle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6698,7 +6698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e717c229d538bd74ea410bd664af4ab0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7185,14 +7185,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b88d31655208d46b8c8d10b19d3749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poemLinePuzzleBackgrounds:
+  backgroundUI:
   - {fileID: 728332884}
   - {fileID: 44332650}
   - {fileID: 382942918}
-  triptychPanels:
+  triptychUI:
   - {fileID: 1544147025}
   - {fileID: 122012457}
   - {fileID: 733934203}
+  backgroundArt:
+  - {fileID: 21300000, guid: 7afa133b34ee1a644b595ac6f585688e, type: 3}
+  - {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
+  - {fileID: 21300000, guid: e717c229d538bd74ea410bd664af4ab0, type: 3}
+  triptychArt:
+  - {fileID: 21300000, guid: 0241b69984d2ec549bc19978cadac969, type: 3}
+  - {fileID: 21300000, guid: b97d9c1c6a6e6a5468199fbe97633164, type: 3}
+  - {fileID: 21300000, guid: b8d111ce1f9c641488d227b833f7b431, type: 3}
 --- !u!1 &1229343690
 GameObject:
   m_ObjectHideFlags: 0
@@ -7900,7 +7908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388738837}
   m_Layer: 0
-  m_Name: Backgrounds_PoemLinePuzzles
+  m_Name: Backgrounds_Puzzles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8663,7 +8671,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0241b69984d2ec549bc19978cadac969, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9422,7 +9430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1785494536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9931,7 +9939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b8d111ce1f9c641488d227b833f7b431, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10594,14 +10602,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b88d31655208d46b8c8d10b19d3749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poemLinePuzzleBackgrounds:
+  backgroundUI:
   - {fileID: 465363310}
   - {fileID: 370664998}
   - {fileID: 1090092168}
-  triptychPanels:
+  triptychUI:
   - {fileID: 412910061}
   - {fileID: 1012044066}
   - {fileID: 1811403361}
+  backgroundArt:
+  - {fileID: 21300000, guid: a632c305faf4358408c0677f2de23a58, type: 3}
+  - {fileID: 21300000, guid: 3e8a17efdf80d5e498ca9807a7be5621, type: 3}
+  - {fileID: 21300000, guid: 97993bec06b58e14a8db706fb63f1b25, type: 3}
+  triptychArt:
+  - {fileID: 21300000, guid: 2eb1b8ff39d400d4b93214d31aec7f6b, type: 3}
+  - {fileID: 21300000, guid: 77dbd90ea9358224a88e97e3ce63e471, type: 3}
+  - {fileID: 21300000, guid: 70a61238498130742930f0820a002637, type: 3}
 --- !u!1 &1846433151
 GameObject:
   m_ObjectHideFlags: 0
