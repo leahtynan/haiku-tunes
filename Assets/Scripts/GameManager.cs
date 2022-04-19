@@ -24,14 +24,9 @@ public class GameManager : MonoBehaviour
     }
 
     /* Loads UI for a poem and resets the game play data */
-    // TODO: This should be set up as a callback function triggered when the "Next" button is clicked
     public void LoadPoem(int poemNumber)
     {
-        foreach (PoemManager poem in poemManagers)
-        {
-            poem.gameObject.SetActive(false);
-        }
-        poemManagers[poemNumber].gameObject.SetActive(true);
+        Debug.Log("Loading poem number " + poemNumber);
         poemManagers[poemNumber].backgroundArtViewer.Initialize();
         nextButton.GetComponent<CanvasGroup>().alpha = 0;
         currentPoem = poemNumber;
@@ -40,6 +35,27 @@ public class GameManager : MonoBehaviour
         isInteractable = true;
         isShowingHaiku = false;
         audioSource.loop = false;
+        if (poemNumber == 0)
+        {
+            foreach (PoemManager poem in poemManagers)
+            {
+                poem.gameObject.GetComponent<CanvasGroup>().alpha = 0;
+            }
+            poemManagers[poemNumber].gameObject.GetComponent<CanvasGroup>().alpha = 1;
+        } else 
+        {
+            StartCoroutine(TransitionToNewPuzzle(poemNumber));
+        }
+    }
+
+    /* Do exit animation for previous poem's triptych and fade in the next puzzle */
+    public IEnumerator TransitionToNewPuzzle(int poemNumber)
+    {
+        StartCoroutine(poemManagers[poemNumber - 1].backgroundArtViewer.Exit(1.5f));
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(poemManagers[poemNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1.5f));
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(poemManagers[poemNumber].GetComponent<UIFader>().Fade(0, 1, 1.5f));
     }
 
     /* Moves to next poem. This is used as a callback upon pressing the "Next" button in the haiku state of a poem */
@@ -97,12 +113,13 @@ public class GameManager : MonoBehaviour
         {
             isShowingHaiku = true;
             float timePoemShowing = 0f;
-            StartCoroutine(poemManagers[currentPoem].backgroundArtViewer.DisplayTriptych(1f));
-            StartCoroutine(poemManagers[currentPoem].ShowPoem(1f));
+            StartCoroutine(poemManagers[currentPoem].backgroundArtViewer.DisplayTriptych(2f));
+            StartCoroutine(poemManagers[currentPoem].ShowPoem(2f));
             AssignAndPlayAudio(poemManagers[currentPoem].fullSong);
             yield return new WaitForSeconds(audioSource.clip.length - 1f); // Wait until a second before the song finishes playing
             ShowNextButton(true);
             audioSource.loop = true;
+            // TODO: If it's the last puzzle, don't show the next button. Give some indication it is the end, option to loop back to first puzzle.
         }
         else 
         {

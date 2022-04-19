@@ -38,9 +38,9 @@ public class PoemManager : MonoBehaviour
         {
             puzzle.Toggle(false);
         }
-        yield return (WaitTime);
         poemViewer.Toggle(true);
-        StartCoroutine(poemViewer.RevealPoem());
+        StartCoroutine(poemViewer.RevealPoem(WaitTime));
+        yield return null;
     }
 
 }

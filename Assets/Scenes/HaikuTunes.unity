@@ -4029,6 +4029,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &556946727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556946728}
+  - component: {fileID: 556946730}
+  - component: {fileID: 556946729}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &556946728
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556946727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 889336711}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &556946729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556946727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &556946730
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556946727}
+  m_CullTransparentMesh: 1
 --- !u!1 &562674921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4370,7 +4445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleViewer: {fileID: 587864858}
-  musicalPhrase: {fileID: 8300000, guid: 3379ae4d01f98b04d979f5db45712aa4, type: 3}
+  musicalPhrase: {fileID: 8300000, guid: 30074b3b5f576ed4583d0fdfbb394334, type: 3}
   clue: 'All of human kind:'
   correctAnswer: humanity
   correctAnswerLetters: 
@@ -4518,7 +4593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleViewer: {fileID: 600929499}
-  musicalPhrase: {fileID: 8300000, guid: d6dad1b39312223478e49255ea9baaaa, type: 3}
+  musicalPhrase: {fileID: 8300000, guid: 2160dd5aebe2bc8499a0e0ce453587b1, type: 3}
   clue: 'Theme of Valentine''s Day:'
   correctAnswer: love
   correctAnswerLetters: 
@@ -4913,7 +4988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleViewer: {fileID: 632111140}
-  musicalPhrase: {fileID: 8300000, guid: 556b30c6b49cf4043af36f33487e5b39, type: 3}
+  musicalPhrase: {fileID: 8300000, guid: ae611877271177e4f89d0e4fd683c04a, type: 3}
   clue: 'Purpose of an agency for an artist, model, etc.:'
   correctAnswer: represent
   correctAnswerLetters: 
@@ -4952,7 +5027,7 @@ RectTransform:
   - {fileID: 308711548}
   - {fileID: 1522796655}
   m_Father: {fileID: 889336711}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -5043,7 +5118,7 @@ Transform:
   - {fileID: 1785494536}
   - {fileID: 1772970017}
   m_Father: {fileID: 889336711}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697032825
 GameObject:
@@ -5982,6 +6057,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 556946728}
   - {fileID: 692485297}
   - {fileID: 675182175}
   m_Father: {fileID: 0}
@@ -7194,13 +7270,13 @@ MonoBehaviour:
   - {fileID: 122012457}
   - {fileID: 733934203}
   backgroundArt:
-  - {fileID: 21300000, guid: 7afa133b34ee1a644b595ac6f585688e, type: 3}
-  - {fileID: 21300000, guid: da222661a2c01d7468d1437e443c16c0, type: 3}
-  - {fileID: 21300000, guid: e717c229d538bd74ea410bd664af4ab0, type: 3}
+  - {fileID: 21300000, guid: 3d666bc33b5011f41ba7c5870b27b6f3, type: 3}
+  - {fileID: 21300000, guid: 01e9d94ceadfd0f4fafcf7a5c3d4909d, type: 3}
+  - {fileID: 21300000, guid: 30f51a4efb19e7e4da85e43fb7d602e2, type: 3}
   triptychArt:
-  - {fileID: 21300000, guid: 0241b69984d2ec549bc19978cadac969, type: 3}
-  - {fileID: 21300000, guid: b97d9c1c6a6e6a5468199fbe97633164, type: 3}
-  - {fileID: 21300000, guid: b8d111ce1f9c641488d227b833f7b431, type: 3}
+  - {fileID: 21300000, guid: a38bbc1c091a9084090325652b67150d, type: 3}
+  - {fileID: 21300000, guid: 3294111ef838d1249877e889710f0d3b, type: 3}
+  - {fileID: 21300000, guid: 1f619afa70146cd4298f504c98a33ece, type: 3}
 --- !u!1 &1229343690
 GameObject:
   m_ObjectHideFlags: 0
@@ -9339,6 +9415,8 @@ GameObject:
   - component: {fileID: 1772970017}
   - component: {fileID: 1772970016}
   - component: {fileID: 1772970018}
+  - component: {fileID: 1772970020}
+  - component: {fileID: 1772970019}
   m_Layer: 0
   m_Name: Poem_Janet
   m_TagString: Untagged
@@ -9364,7 +9442,7 @@ MonoBehaviour:
   - {fileID: 587864859}
   poemViewer: {fileID: 1772970018}
   backgroundArtViewer: {fileID: 1843753586}
-  fullSong: {fileID: 8300000, guid: 2b9597b4b5ca60f4e97c6a8873b8d394, type: 3}
+  fullSong: {fileID: 8300000, guid: 90fdf28b2a7630d4293ceb50a2deadb4, type: 3}
   haiku: {fileID: 1341144786}
 --- !u!224 &1772970017
 RectTransform:
@@ -9413,6 +9491,31 @@ MonoBehaviour:
   - 
   - 
   - 
+--- !u!114 &1772970019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772970015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1f0c7f94c5464a944db68d5c2a383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1772970020}
+--- !u!225 &1772970020
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772970015}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1785494535
 GameObject:
   m_ObjectHideFlags: 0
@@ -9424,6 +9527,8 @@ GameObject:
   - component: {fileID: 1785494536}
   - component: {fileID: 1785494538}
   - component: {fileID: 1785494537}
+  - component: {fileID: 1785494540}
+  - component: {fileID: 1785494539}
   m_Layer: 0
   m_Name: Poem_Alexandra
   m_TagString: Untagged
@@ -9498,6 +9603,31 @@ MonoBehaviour:
   backgroundArtViewer: {fileID: 1225588730}
   fullSong: {fileID: 8300000, guid: 2b9597b4b5ca60f4e97c6a8873b8d394, type: 3}
   haiku: {fileID: 1357231986}
+--- !u!114 &1785494539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785494535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1f0c7f94c5464a944db68d5c2a383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1785494540}
+--- !u!225 &1785494540
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785494535}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1791815307
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,8 +32,21 @@ public class BackgroundArtViewer : MonoBehaviour
         }
         foreach (Image panel in triptychUI)
         {
-            StartCoroutine(panel.GetComponent<UIFader>().Fade(0, 1, 1.5f));
-            yield return new WaitForSeconds(1.5f);
+            StartCoroutine(panel.GetComponent<UIFader>().Fade(0, 1, WaitTime));
+            yield return new WaitForSeconds(WaitTime);
+        }
+    }
+
+    /* Fade out the triptych panels from left to right */
+    public IEnumerator Exit(float WaitTime)
+    {
+        for(int i = 0; i < triptychUI.Length; i++)
+        {
+            StartCoroutine(triptychUI[i].GetComponent<UIFader>().Fade(1, 0, WaitTime));
+            if(i < triptychUI.Length - 1)
+            {
+                yield return new WaitForSeconds(WaitTime);
+            }
         }
     }
 }

@@ -28,13 +28,13 @@ public class PoemViewer : MonoBehaviour
     }
 
     /* Reveals the haiku by revealing the text line-by-line */
-    public IEnumerator RevealPoem()
+    public IEnumerator RevealPoem(float WaitTime)
     {
         Toggle(true);
         for (int i = 0; i < 3; i++)
         {
-            StartCoroutine(haikuLines[i].GetComponent<UIFader>().Fade(0, 1, 1.5f));
-            yield return new WaitForSeconds(1.5f);
+            StartCoroutine(haikuLines[i].GetComponent<UIFader>().Fade(0, 1, WaitTime));
+            yield return new WaitForSeconds(WaitTime);
         }
     }
 
