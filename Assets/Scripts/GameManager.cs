@@ -59,10 +59,10 @@ public class GameManager : MonoBehaviour
     /* Do exit animation for previous poem's triptych and fade in the next puzzle */
     public IEnumerator TransitionToNewPuzzle(int poemNumber)
     {
-        StartCoroutine(poemManagers[poemNumber - 1].backgroundArtViewer.Exit(1.5f));
+        StartCoroutine(poemManagers[poemNumber - 1].backgroundArtViewer.Exit(1f));
         yield return new WaitForSeconds(3f);
-        StartCoroutine(poemManagers[poemNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1.5f));
-        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(poemManagers[poemNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1f));
+        yield return new WaitForSeconds(1f);
         StartCoroutine(poemManagers[poemNumber].GetComponent<UIFader>().Fade(0, 1, 1.5f));
     }
 
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(poemManagers[currentPoem].backgroundArtViewer.DisplayTriptych(2f));
             StartCoroutine(poemManagers[currentPoem].ShowPoem(2f));
             AssignAndPlayAudio(poemManagers[currentPoem].fullSong);
-            yield return new WaitForSeconds(audioSource.clip.length - 1f); // Wait until a second before the song finishes playing
+            yield return new WaitForSeconds(audioSource.clip.length - 5f); // Show navigation moments before the song finishes playing
             ShowNextButton(true);
             audioSource.loop = true;
             if(currentPoem == poemManagers.Length - 1)
