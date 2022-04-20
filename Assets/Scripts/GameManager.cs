@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     public PoemManager[] poemManagers;
     public AudioSource audioSource;
-    public GameObject nextButton;
 
     [Header("Game Play Data")]
     private int currentPoem; // The poem the user is working on
@@ -16,9 +15,15 @@ public class GameManager : MonoBehaviour
     private bool isInteractable; // Whether the user can interact at the moment (i.e. UI isn't in transition)
     private bool isShowingHaiku; // Whether the user is still on the haiku (the final state) - condition for continuing to loop audio
 
+    [Header("Navigation")]
+    public GameObject nextButton;
+    public GameObject startOverButton;
+
     void Start()
     {
         LoadPoem(0);
+        startOverButton.SetActive(true);
+        startOverButton.SetActive(false);
         // Note: In the future, might consider randomizing poems if a lot of content is available.
         // For now, just progress linearly
     }
@@ -29,6 +34,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Loading poem number " + poemNumber);
         poemManagers[poemNumber].backgroundArtViewer.Initialize();
         nextButton.GetComponent<CanvasGroup>().alpha = 0;
+        startOverButton.GetComponent<CanvasGroup>().alpha = 0;
         currentPoem = poemNumber;
         currentPuzzle = 0;
         currentTile = 0;
@@ -42,7 +48,8 @@ public class GameManager : MonoBehaviour
                 poem.gameObject.GetComponent<CanvasGroup>().alpha = 0;
             }
             poemManagers[poemNumber].gameObject.GetComponent<CanvasGroup>().alpha = 1;
-        } else 
+        }
+        else 
         {
             StartCoroutine(TransitionToNewPuzzle(poemNumber));
         }
@@ -120,7 +127,15 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(audioSource.clip.length - 1f); // Wait until a second before the song finishes playing
             ShowNextButton(true);
             audioSource.loop = true;
-            // TODO: If it's the last puzzle, don't show the next button. Give some indication it is the end, option to loop back to first puzzle.
+            if(currentPoem == poemManagers.Length - 1)
+            {
+                nextButton.SetActive(false);
+                startOverButton.SetActive(true);
+                ShowStartOverButton(true);
+            } else
+            {
+                ShowNextButton(true);
+            }
         }
         else 
         {
@@ -147,5 +162,27 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(nextButton.GetComponent<UIFader>().Fade(1, 0, 1f));
         }
+    }
+
+    /* Fades in/out the "Start Over" button */
+    public void ShowStartOverButton(bool isShowing)
+    {
+        if (isShowing)
+        {
+            StartCoroutine(startOverButton.GetComponent<UIFader>().Fade(0, 1, 1f));
+        }
+        else
+        {
+            StartCoroutine(startOverButton.GetComponent<UIFader>().Fade(1, 0, 1f));
+        }
+    }
+
+    public void StartOver()
+    {
+        Debug.Log("Starting over");
+        //startOverButton.GetComponent<CanvasGroup>().alpha = 0;
+        //nextButton.SetActive(true);
+        //startOverButton.SetActive(false);
+        //LoadPoem(0);
     }
 }
