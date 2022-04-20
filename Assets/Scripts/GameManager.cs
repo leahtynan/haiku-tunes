@@ -91,9 +91,10 @@ public class GameManager : MonoBehaviour
     {
         if(isInteractable)
         {
-            poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Fill(letterPressed);
-            if (currentTile < poemManagers[currentPoem].puzzles[currentPuzzle].correctAnswerLetters.Length - 1)
+            Debug.Log("Fill tile: " + currentTile);
+            if (currentTile < poemManagers[currentPoem].puzzles[currentPuzzle].correctAnswerLetters.Length)
             {
+                poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Fill(letterPressed);
                 currentTile++;
             }
         }
@@ -102,13 +103,15 @@ public class GameManager : MonoBehaviour
     /* Deletes the letter from the current tile and moves to the previous tile */
     public void Delete()
     {
-        Debug.Log("Deleting letter at position: " + currentTile);
-        poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Delete();
-        if (currentTile > 0)
+        if(isInteractable)
         {
-            currentTile--;
+            if (currentTile > 0)
+            {
+                currentTile--;
+            }
+            Debug.Log("Deleting letter at position: " + currentTile);
+            poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Delete();
         }
-        Debug.Log("Current tile: " + currentTile);
     }
 
     /* Transitions to the next poem line puzzle or (if the last clue was solved) show the poem and offer option to solve next one */
