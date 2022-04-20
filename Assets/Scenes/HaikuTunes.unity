@@ -568,7 +568,6 @@ MonoBehaviour:
   clue: 'A synonym for harmony, may be preceded by "world":'
   correctAnswer: peace
   correctAnswerLetters: 
-  userAnswer: 
   isAnsweredCorrectly: 0
 --- !u!1 &122012455
 GameObject:
@@ -4526,10 +4525,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleViewer: {fileID: 587864858}
   musicalPhrase: {fileID: 8300000, guid: 30074b3b5f576ed4583d0fdfbb394334, type: 3}
-  clue: 'All of human kind:'
+  clue: 'All the people of the world:'
   correctAnswer: humanity
   correctAnswerLetters: 
-  userAnswer: 
   isAnsweredCorrectly: 0
 --- !u!1 &597711622
 GameObject:
@@ -4677,7 +4675,6 @@ MonoBehaviour:
   clue: 'Theme of Valentine''s Day:'
   correctAnswer: love
   correctAnswerLetters: 
-  userAnswer: 
   isAnsweredCorrectly: 0
 --- !u!1 &604358103
 GameObject:
@@ -5069,10 +5066,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleViewer: {fileID: 632111140}
   musicalPhrase: {fileID: 8300000, guid: ae611877271177e4f89d0e4fd683c04a, type: 3}
-  clue: 'Purpose of an agency for an artist, model, etc.:'
+  clue: 'To stand in for:'
   correctAnswer: represent
   correctAnswerLetters: 
-  userAnswer: 
   isAnsweredCorrectly: 0
 --- !u!1 &675182174
 GameObject:
@@ -5280,7 +5276,6 @@ MonoBehaviour:
   clue: 'The Beatles song, "All __________ Now":'
   correctAnswer: together
   correctAnswerLetters: 
-  userAnswer: 
   isAnsweredCorrectly: 0
 --- !u!1 &698050127
 GameObject:
@@ -7946,10 +7941,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleViewer: {fileID: 1283519258}
   musicalPhrase: {fileID: 8300000, guid: 3379ae4d01f98b04d979f5db45712aa4, type: 3}
-  clue: 'Without any kind of frills:'
+  clue: 'Not complicated:'
   correctAnswer: simple
   correctAnswerLetters: 
-  userAnswer: 
   isAnsweredCorrectly: 0
 --- !u!1 &1316229517
 GameObject:
