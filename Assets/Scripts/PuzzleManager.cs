@@ -9,7 +9,6 @@ public class PuzzleManager : MonoBehaviour
     public string clue;
     public string correctAnswer;
     public char[] correctAnswerLetters;
-    public string userAnswer;
     public bool isAnsweredCorrectly; // The game manager checks this for true every frame to know when to proceed in the poem
 
     void Awake()
@@ -22,7 +21,7 @@ public class PuzzleManager : MonoBehaviour
     {
         CheckAnswer();
     }
-
+    
     /* Fill the text UI for the clue with the clue content */
     private void LoadClue()
     {
@@ -60,5 +59,13 @@ public class PuzzleManager : MonoBehaviour
     public void Toggle(bool isActive)
     {
         this.gameObject.SetActive(isActive);
+    }
+
+    /* Resets solved status and UI for the case where the user loops back and plays this puzzle again */
+    public void Reset()
+    {
+        Debug.Log("resetting puzzle");
+        puzzleViewer.ResetTiles();
+        isAnsweredCorrectly = false;
     }
 }

@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         LoadPoem(0);
-        startOverButton.SetActive(true);
-        startOverButton.SetActive(false);
         // Note: In the future, might consider randomizing poems if a lot of content is available.
         // For now, just progress linearly
     }
@@ -33,6 +31,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Loading poem number " + poemNumber);
         poemManagers[poemNumber].backgroundArtViewer.Initialize();
+        nextButton.SetActive(true);
+        startOverButton.SetActive(false);
         nextButton.GetComponent<CanvasGroup>().alpha = 0;
         startOverButton.GetComponent<CanvasGroup>().alpha = 0;
         currentPoem = poemNumber;
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         isInteractable = true;
         isShowingHaiku = false;
         audioSource.loop = false;
+        poemManagers[currentPoem].LoadPuzzle(currentPuzzle);
         if (poemNumber == 0)
         {
             foreach (PoemManager poem in poemManagers)
@@ -179,10 +180,11 @@ public class GameManager : MonoBehaviour
 
     public void StartOver()
     {
-        Debug.Log("Starting over");
-        //startOverButton.GetComponent<CanvasGroup>().alpha = 0;
-        //nextButton.SetActive(true);
-        //startOverButton.SetActive(false);
-        //LoadPoem(0);
+        audioSource.Stop();
+        foreach (PoemManager poem in poemManagers)
+        {
+            poem.Reset();
+        }
+        LoadPoem(0);
     }
 }

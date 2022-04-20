@@ -43,4 +43,15 @@ public class PoemManager : MonoBehaviour
         yield return null;
     }
 
+    /* Reset UI and data for the 2nd+ time this poem is solved */
+    public void Reset()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            puzzles[i].Reset();
+            poemViewer.Toggle(false);
+            poemViewer.haikuLines[i].GetComponent<CanvasGroup>().alpha = 0;
+        }
+    }
+
 }

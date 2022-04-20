@@ -36,4 +36,13 @@ public class PuzzleViewer : MonoBehaviour
             letter.gameObject.SetActive(false);
         }
     }
+
+    /* Clears letters and success graphics from tiles */
+    public void ResetTiles()
+    {
+        foreach(LetterTileViewer tile in letterTiles)
+        {
+            tile.Reset();
+        }
+    }
 }

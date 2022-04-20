@@ -12,8 +12,7 @@ public class LetterTileViewer : MonoBehaviour
 
     void Start()
     {
-        Delete();
-        ShowDefaultLook();
+        Reset();
     }
 
     /* Removes the letter from the tile */
@@ -38,5 +37,12 @@ public class LetterTileViewer : MonoBehaviour
     public void ShowSuccessLook()
     {
         background.sprite = successLook;
+    }
+
+    /* Clear letter and success graphics from the tile */
+    public void Reset()
+    {
+        Delete();
+        ShowDefaultLook();
     }
 }

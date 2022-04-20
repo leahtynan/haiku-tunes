@@ -28,7 +28,7 @@ public class BackgroundArtViewer : MonoBehaviour
     {
         foreach (Image background in backgroundUI)
         {
-            background.enabled = false;
+            background.GetComponent<CanvasGroup>().alpha = 0;
         }
         foreach (Image panel in triptychUI)
         {
