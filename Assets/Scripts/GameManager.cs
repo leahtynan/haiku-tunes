@@ -81,12 +81,13 @@ public class GameManager : MonoBehaviour
     /* Enters a letter into the current tile and moves to the next tile (unless user is on the last tile) */
     public void EnterLetter(string letterPressed)
     {
-        Debug.Log("Pressed the letter: " + letterPressed + ", filling tile #" + currentTile);
-        poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Fill(letterPressed);
-        Debug.Log(poemManagers[currentPoem].puzzles[currentPuzzle].correctAnswerLetters.Length);
-        if(currentTile < poemManagers[currentPoem].puzzles[currentPuzzle].correctAnswerLetters.Length - 1)
+        if(isInteractable)
         {
-            currentTile++;
+            poemManagers[currentPoem].puzzles[currentPuzzle].puzzleViewer.letterTiles[currentTile].Fill(letterPressed);
+            if (currentTile < poemManagers[currentPoem].puzzles[currentPuzzle].correctAnswerLetters.Length - 1)
+            {
+                currentTile++;
+            }
         }
     }
 
