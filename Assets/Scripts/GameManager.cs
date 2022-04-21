@@ -18,10 +18,13 @@ public class GameManager : MonoBehaviour
     [Header("Navigation")]
     public GameObject nextButton;
     public GameObject startOverButton;
+    public bool navigationClicked;
 
     void Start()
     {
         LoadPoem(0);
+        nextButton.GetComponent<CanvasGroup>().interactable = false;
+        startOverButton.GetComponent<CanvasGroup>().interactable = false;
         // Note: In the future, might consider randomizing poems if a lot of content is available.
         // For now, just progress linearly
     }
@@ -54,6 +57,14 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(TransitionToNewPuzzle(poemNumber));
         }
+        StartCoroutine(EnableNavigation());
+    }
+
+    /* Enables clickability state for navigation. A delay is needed due to the 1 second fade out animation of the "Next"/"Start Over" buttons */
+    public IEnumerator EnableNavigation()
+    {
+        yield return new WaitForSeconds(5f);
+        navigationClicked = false;
     }
 
     /* Do exit animation for previous poem's triptych and fade in the next puzzle */
@@ -64,15 +75,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(poemManagers[poemNumber - 1].GetComponent<UIFader>().Fade(1, 0, 1f));
         yield return new WaitForSeconds(1f);
         StartCoroutine(poemManagers[poemNumber].GetComponent<UIFader>().Fade(0, 1, 1.5f));
-    }
-
-    /* Moves to next poem. This is used as a callback upon pressing the "Next" button in the haiku state of a poem */
-    public void GoToNextPoem()
-    {
-        audioSource.Stop();
-        currentPoem++;
-        ShowNextButton(false);
-        LoadPoem(currentPoem);
     }
 
     /* Continuously checks for correctly entered answers */
@@ -129,7 +131,6 @@ public class GameManager : MonoBehaviour
             StartCoroutine(poemManagers[currentPoem].ShowPoem(2f));
             AssignAndPlayAudio(poemManagers[currentPoem].fullSong);
             yield return new WaitForSeconds(audioSource.clip.length - 5f); // Show navigation moments before the song finishes playing
-            ShowNextButton(true);
             audioSource.loop = true;
             if(currentPoem == poemManagers.Length - 1)
             {
@@ -159,7 +160,8 @@ public class GameManager : MonoBehaviour
     /* Fades in/out the "Next" button */
     public void ShowNextButton(bool isShowing)
     {
-        if(isShowing)
+        nextButton.GetComponent<CanvasGroup>().interactable = isShowing;
+        if (isShowing)
         {
             StartCoroutine(nextButton.GetComponent<UIFader>().Fade(0, 1, 1f));
         } else
@@ -171,6 +173,7 @@ public class GameManager : MonoBehaviour
     /* Fades in/out the "Start Over" button */
     public void ShowStartOverButton(bool isShowing)
     {
+        startOverButton.GetComponent<CanvasGroup>().interactable = isShowing;
         if (isShowing)
         {
             StartCoroutine(startOverButton.GetComponent<UIFader>().Fade(0, 1, 1f));
@@ -181,13 +184,33 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /* Moves to next poem. This is used as a callback upon pressing the "Next" button in the haiku state of a poem */
+    public void GoToNextPoem()
+    {
+        if (!navigationClicked)
+        {
+            navigationClicked = true;
+            startOverButton.GetComponent<CanvasGroup>().interactable = false;
+            audioSource.Stop();
+            currentPoem++;
+            ShowNextButton(false);
+            LoadPoem(currentPoem);
+        }
+    }
+
+    /* Circles back to the first poem, rests all UI and game data to enable replayability */
     public void StartOver()
     {
-        audioSource.Stop();
-        foreach (PoemManager poem in poemManagers)
+        if (!navigationClicked)
         {
-            poem.Reset();
+            navigationClicked = true;
+            nextButton.GetComponent<CanvasGroup>().interactable = false;
+            audioSource.Stop();
+            foreach (PoemManager poem in poemManagers)
+            {
+                poem.Reset();
+            }
+            LoadPoem(0);
         }
-        LoadPoem(0);
     }
 }
