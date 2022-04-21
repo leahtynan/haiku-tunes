@@ -19,12 +19,11 @@ public class GameManager : MonoBehaviour
     public GameObject nextButton;
     public GameObject startOverButton;
     public bool navigationClicked;
+    public bool navigationShowing;
 
     void Start()
     {
         LoadPoem(0);
-        nextButton.GetComponent<CanvasGroup>().interactable = false;
-        startOverButton.GetComponent<CanvasGroup>().interactable = false;
         // Note: In the future, might consider randomizing poems if a lot of content is available.
         // For now, just progress linearly
     }
@@ -160,7 +159,6 @@ public class GameManager : MonoBehaviour
     /* Fades in/out the "Next" button */
     public void ShowNextButton(bool isShowing)
     {
-        nextButton.GetComponent<CanvasGroup>().interactable = isShowing;
         if (isShowing)
         {
             StartCoroutine(nextButton.GetComponent<UIFader>().Fade(0, 1, 1f));
@@ -168,12 +166,12 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(nextButton.GetComponent<UIFader>().Fade(1, 0, 1f));
         }
+        navigationShowing = isShowing;
     }
 
     /* Fades in/out the "Start Over" button */
     public void ShowStartOverButton(bool isShowing)
     {
-        startOverButton.GetComponent<CanvasGroup>().interactable = isShowing;
         if (isShowing)
         {
             StartCoroutine(startOverButton.GetComponent<UIFader>().Fade(0, 1, 1f));
@@ -182,15 +180,15 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(startOverButton.GetComponent<UIFader>().Fade(1, 0, 1f));
         }
+        navigationShowing = isShowing;
     }
 
     /* Moves to next poem. This is used as a callback upon pressing the "Next" button in the haiku state of a poem */
     public void GoToNextPoem()
     {
-        if (!navigationClicked)
+        if (navigationClicked == false && navigationShowing == true)
         {
             navigationClicked = true;
-            startOverButton.GetComponent<CanvasGroup>().interactable = false;
             audioSource.Stop();
             currentPoem++;
             ShowNextButton(false);
@@ -201,11 +199,11 @@ public class GameManager : MonoBehaviour
     /* Circles back to the first poem, rests all UI and game data to enable replayability */
     public void StartOver()
     {
-        if (!navigationClicked)
+        if (navigationClicked == false && navigationShowing == true)
         {
             navigationClicked = true;
-            nextButton.GetComponent<CanvasGroup>().interactable = false;
             audioSource.Stop();
+            ShowStartOverButton(false);
             foreach (PoemManager poem in poemManagers)
             {
                 poem.Reset();
