@@ -9,6 +9,7 @@ public class LetterTileViewer : MonoBehaviour
     public Sprite defaultLook;
     public Sprite successLook;
     public Text letter;
+    public bool isFilled;
 
     void Start()
     {
@@ -19,12 +20,14 @@ public class LetterTileViewer : MonoBehaviour
     public void Delete()
     {
         letter.text = "";
+        isFilled = false;
     }
 
     /* Fills the letter tile with the letter the user typed */
     public void Fill(string enteredLetter)
     {
         letter.text = enteredLetter.ToUpper();
+        isFilled = true;
     }
 
     /* Change the tile background to plain white */

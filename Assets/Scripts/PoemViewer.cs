@@ -10,6 +10,7 @@ public class PoemViewer : MonoBehaviour
     private float delay = 0.1f;
     public string[] fullText;
     public string[] currentText;
+    public Text feedback;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class PoemViewer : MonoBehaviour
             haikuLines[i].text = fullText[i];
             haikuLines[i].GetComponent<CanvasGroup>().alpha = 0;
         }
+        feedback.text = "";
     }
 
     /* Hides/shows entire haiku game oject */

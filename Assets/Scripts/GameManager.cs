@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
         {
             isInteractable = false;
             poemManagers[currentPoem].puzzles[currentPuzzle].isAnsweredCorrectly = false;
+            poemManagers[currentPoem].poemViewer.feedback.text = "";
             StartCoroutine(ProgressPuzzle(1f));
         }
     }

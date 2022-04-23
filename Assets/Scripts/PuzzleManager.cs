@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
+    public PoemViewer poemViewer;
     public PuzzleViewer puzzleViewer;
     public AudioClip musicalPhrase;
     public string clue;
@@ -40,20 +41,51 @@ public class PuzzleManager : MonoBehaviour
     public void CheckAnswer()
     {
         int correctAnswerCounter = 0;
+        bool areAllTilesFilled = AreAllTilesFilled();
         for (int i = 0; i < correctAnswerLetters.Length; i++)
         {
-            //Debug.Log("Compared entered text " + poemLineViewer.letterTiles[i].letter.text + " to correct text " + correctAnswerLetters[i].ToString());
             if (puzzleViewer.letterTiles[i].letter.text.ToLower() == correctAnswerLetters[i].ToString())
             {
                 correctAnswerCounter++;
             }
         }
-        //Debug.Log("Number of correct letters " + correctAnswerCounter);
+        // Trigger success state
         if (correctAnswerCounter == correctAnswerLetters.Length)
         {
             isAnsweredCorrectly = true;
         }
+        // Trigger feedback state
+        else if (correctAnswerCounter < correctAnswerLetters.Length && areAllTilesFilled == true)
+        {
+            poemViewer.feedback.text = "The answer ______ is not correct. *hint*";
+        } 
+        // Remove feedback state if the user has not filled all the tiles, or if letters have been deleted following an incorrect answer
+        else if(correctAnswerCounter < correctAnswerLetters.Length && areAllTilesFilled == false)
+        {
+            poemViewer.feedback.text = "";
+
+        }
     }
+
+    /* Checks that all tiles have text in them */
+    public bool AreAllTilesFilled()
+    {
+        bool areFilled = false;
+        int counter = 0;
+        foreach(LetterTileViewer tile in puzzleViewer.letterTiles)
+        {
+            if(tile.isFilled)
+            {
+                counter++;
+            }
+        }
+        if(counter == correctAnswerLetters.Length)
+        {
+            areFilled = true;
+        }
+        return areFilled;
+    }
+
 
     /* Hides/shows entire line, inputs, and clue contained by this game object */
     public void Toggle(bool isActive)

@@ -154,7 +154,7 @@ Transform:
   - {fileID: 697032826}
   - {fileID: 1283519257}
   m_Father: {fileID: 1785494536}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9214926
 GameObject:
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 01e9d94ceadfd0f4fafcf7a5c3d4909d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -769,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 1785494537}
   puzzleViewer: {fileID: 120280183}
   musicalPhrase: {fileID: 8300000, guid: d6dad1b39312223478e49255ea9baaaa, type: 3}
   clue: 'A synonym for harmony, may be preceded by "world":'
@@ -2552,9 +2553,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1037, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286104611
@@ -2991,6 +2992,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308711547}
+  m_CullTransparentMesh: 1
+--- !u!1 &310584627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310584628}
+  - component: {fileID: 310584630}
+  - component: {fileID: 310584629}
+  m_Layer: 5
+  m_Name: Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &310584628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310584627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1785494536}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -1000, y: 360}
+  m_SizeDelta: {x: 1450, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &310584629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310584627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Answer feedback goes here.
+--- !u!222 &310584630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310584627}
   m_CullTransparentMesh: 1
 --- !u!1 &335231059
 GameObject:
@@ -3650,9 +3730,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 421, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377624899
@@ -3926,7 +4006,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 30f51a4efb19e7e4da85e43fb7d602e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4840,9 +4920,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 729, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469746981
@@ -5617,6 +5697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 0}
   puzzleViewer: {fileID: 587864858}
   musicalPhrase: {fileID: 8300000, guid: 30074b3b5f576ed4583d0fdfbb394334, type: 3}
   clue: 'All the people of the world:'
@@ -5764,6 +5845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 0}
   puzzleViewer: {fileID: 600929499}
   musicalPhrase: {fileID: 8300000, guid: 2160dd5aebe2bc8499a0e0ce453587b1, type: 3}
   clue: 'Theme of Valentine''s Day:'
@@ -6158,6 +6240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 0}
   puzzleViewer: {fileID: 632111140}
   musicalPhrase: {fileID: 8300000, guid: ae611877271177e4f89d0e4fd683c04a, type: 3}
   clue: 'To stand in for:'
@@ -6561,6 +6644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 1785494537}
   puzzleViewer: {fileID: 697032827}
   musicalPhrase: {fileID: 8300000, guid: 556b30c6b49cf4043af36f33487e5b39, type: 3}
   clue: 'The Beatles song, "All __________ Now":'
@@ -6844,9 +6928,9 @@ RectTransform:
   m_Father: {fileID: 964216108}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1191, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725255498
@@ -7147,7 +7231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3d666bc33b5011f41ba7c5870b27b6f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8099,9 +8183,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1345, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963341206
@@ -8192,9 +8276,9 @@ RectTransform:
   m_Father: {fileID: 964216108}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 883, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963941320
@@ -9582,9 +9666,9 @@ RectTransform:
   m_Father: {fileID: 964216108}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1037, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164619404
@@ -9788,6 +9872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 0}
   puzzleViewer: {fileID: 1175642731}
   musicalPhrase: {fileID: 8300000, guid: 0cbcb1bfd38d79a47865f34349c7ff4f, type: 3}
   clue: "Star in the sky that doesn\u2019t move, aka \"Polaris\":"
@@ -10483,6 +10568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 1785494537}
   puzzleViewer: {fileID: 1283519258}
   musicalPhrase: {fileID: 8300000, guid: 3379ae4d01f98b04d979f5db45712aa4, type: 3}
   clue: 'Not complicated:'
@@ -10755,7 +10841,7 @@ RectTransform:
   - {fileID: 187312641}
   - {fileID: 1117108254}
   m_Father: {fileID: 1785494536}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11582,7 +11668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1459167228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11655,6 +11741,7 @@ MonoBehaviour:
   - 
   - 
   - 
+  feedback: {fileID: 0}
 --- !u!114 &1459167232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13132,9 +13219,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1191, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714238389
@@ -13262,6 +13349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 0}
   puzzleViewer: {fileID: 1740412792}
   musicalPhrase: {fileID: 8300000, guid: 571d3f314dfeee541ad20b015a21c181, type: 3}
   clue: '_____ and sound:'
@@ -13381,9 +13469,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 575, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769758186
@@ -13459,7 +13547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1772970016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13527,6 +13615,7 @@ MonoBehaviour:
   - 
   - 
   - 
+  feedback: {fileID: 0}
 --- !u!114 &1772970019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13584,6 +13673,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1225588729}
+  - {fileID: 310584628}
   - {fileID: 5605450}
   - {fileID: 1357231987}
   m_Father: {fileID: 692485297}
@@ -13619,6 +13709,7 @@ MonoBehaviour:
   - 
   - 
   - 
+  feedback: {fileID: 310584629}
 --- !u!114 &1785494538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15768,9 +15859,9 @@ RectTransform:
   m_Father: {fileID: 964216108}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 729, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913610720
@@ -16005,6 +16096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9444db388111c449f245bcf6e2c61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poemViewer: {fileID: 0}
   puzzleViewer: {fileID: 1952152744}
   musicalPhrase: {fileID: 8300000, guid: b4f585dbe385a574fa827e1bc1a073d1, type: 3}
   clue: 'Units of a sentence:'
@@ -16124,9 +16216,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1499, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974052388
@@ -16471,9 +16563,9 @@ RectTransform:
   m_Father: {fileID: 1607416104}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 883, y: -70}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043801288
