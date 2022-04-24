@@ -11,11 +11,14 @@ public class PuzzleManager : MonoBehaviour
     public string correctAnswer;
     public char[] correctAnswerLetters;
     public bool isAnsweredCorrectly; // The game manager checks this for true every frame to know when to proceed in the poem
+    public int numberIncorrectGuesses;
+    public List<string> incorrectGuesses = new List<string>();
 
     void Awake()
     {
         GetInputLetterAnswers();
         puzzleViewer.clueUI.text = clue;
+        Reset();
     }
 
     void Update()
@@ -58,7 +61,23 @@ public class PuzzleManager : MonoBehaviour
         else if (correctAnswerCounter < correctAnswerLetters.Length && areAllTilesFilled == true)
         {
             string userAnswer = BuildUserAnswer(puzzleViewer.letterTiles);
-            poemViewer.feedback.text = userAnswer + " is not correct. *hint*";
+            if (!incorrectGuesses.Contains(userAnswer))
+            {
+                incorrectGuesses.Add(userAnswer);
+                numberIncorrectGuesses++;
+            }
+            if(numberIncorrectGuesses == 1)
+            {
+                poemViewer.feedback.text = userAnswer + " is not correct.";
+            }
+            else if (numberIncorrectGuesses == 2)
+            {
+                poemViewer.feedback.text = userAnswer + " is not correct. The correct word starts with the letter " + correctAnswerLetters[0].ToString().ToUpper() + ".";
+            }
+            else if (numberIncorrectGuesses > 2)
+            {
+                poemViewer.feedback.text = userAnswer + " is not correct. The correct word starts with the letter " + correctAnswerLetters[0].ToString().ToUpper() + " and ends with the letter " + correctAnswerLetters[correctAnswerLetters.Length - 1].ToString().ToUpper() + ".";
+            }
         } 
         // Remove feedback state if the user has not filled all the tiles, or if letters have been deleted following an incorrect answer
         else if(correctAnswerCounter < correctAnswerLetters.Length && areAllTilesFilled == false)
@@ -112,5 +131,6 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log("resetting puzzle");
         puzzleViewer.ResetTiles();
         isAnsweredCorrectly = false;
+        numberIncorrectGuesses = 0;
     }
 }
