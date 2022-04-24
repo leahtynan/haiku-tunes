@@ -57,7 +57,8 @@ public class PuzzleManager : MonoBehaviour
         // Trigger feedback state
         else if (correctAnswerCounter < correctAnswerLetters.Length && areAllTilesFilled == true)
         {
-            poemViewer.feedback.text = "The answer ______ is not correct. *hint*";
+            string userAnswer = BuildUserAnswer(puzzleViewer.letterTiles);
+            poemViewer.feedback.text = userAnswer + " is not correct. *hint*";
         } 
         // Remove feedback state if the user has not filled all the tiles, or if letters have been deleted following an incorrect answer
         else if(correctAnswerCounter < correctAnswerLetters.Length && areAllTilesFilled == false)
@@ -84,6 +85,18 @@ public class PuzzleManager : MonoBehaviour
             areFilled = true;
         }
         return areFilled;
+    }
+
+    /* Builds user answer out of individual letters; used for reiterate incorrect answer in feedback mode */
+    public string BuildUserAnswer(LetterTileViewer[] letterTiles)
+    {
+        string userAnswer = "";
+        foreach(LetterTileViewer letterTile in letterTiles)
+        {
+            userAnswer = userAnswer + letterTile.letter.text;
+        }
+        Debug.Log("Built word: " + userAnswer);
+        return userAnswer;
     }
 
 
