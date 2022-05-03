@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HaikuTunes.unity
+    guid: e7c009f2ff852a14e8d3b1250d46c6f3
   m_configObjects: {}
