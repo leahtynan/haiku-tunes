@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 unity webgl responsive
 
 template by dom
@@ -7,41 +7,140 @@ https://twitter.com/zerstoerer
 
 source code on github
 https://github.com/sno/unity-webgl-responsive
+
 -->
 
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
+    <title>Haiku Tunes | Leah Tynan</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400&display=swap" rel="stylesheet">
+    <meta name="description" content="Series of clues that build a musical haiku poem">
+    <meta property="og:title" content="Leah Tynan | Haiku Tunes" />
+    <meta property="og:url" content="http://www.leahtynan.com/haiku-tunes" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Series of clues that build a musical haiku poem" />
+    <meta property="og:image" content="http://www.leahtynan.com/magic-puzzles/TemplateData/magic-puzzles_og-image.jpg" /> <!-- TODO: Update this -->
+    <link rel="shortcut icon" href="TemplateData/favicon.ico"> <!-- TODO: Update this -->
+    <script src="Build/UnityLoader.js"></script>
+    <script src="https://kit.fontawesome.com/78d3e3ffa7.js" crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172171364-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'UA-172171364-1');
+    </script>
+    <!-- WebGL Template Styles-->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <title>{{{ PRODUCT_NAME }}}</title>
-  </head>
-  <body>
-    <div class="webgl-wrapper">
-      <div class="aspect"></div>
-      <div class="webgl-content">
-        <div id="unityContainer">
-          <canvas id="unity-canvas" style="background: {{{ BACKGROUND_FILENAME ? 'url(\'Build/' + BACKGROUND_FILENAME.replace(/'/g, '%27') + '\') center / cover' : BACKGROUND_COLOR }}}"></canvas>
+    <!-- My Additional Styles-->
+    <link rel="stylesheet" href="assets/css/leah.css">
+</head>
+<body>
+    <nav id="nav">
+        <a href="/"><img src="assets/img/arrow-pointing-to-left.svg" alt="left arrow"></a>
+    </nav>
+    <header class="black">
+        <h1>Haiku Tunes</h1>
+    </header>
+    <section id="game" class="webgl-wrapper">
+        <div class="aspect"></div>
+        <div class="webgl-content">
+            <div id="unityContainer">
+                <canvas id="unity-canvas" style="background: {{{ BACKGROUND_FILENAME ? 'url(\'Build/' + BACKGROUND_FILENAME.replace(/'/g, '%27') + '\') center / cover' : BACKGROUND_COLOR }}}"></canvas>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="info">
-      <p>unity webgl responsive</p>
-      <p>press F or <a href="#" onclick="myGameInstance.SetFullscreen(1)">click here</a> to toggle fullscreen</p>
-    </div>
-
-    <!-- feel free to remove all credits! -->
-    <div class="info">
-      <p>source code on <a href="https://github.com/sno/unity-webgl-responsive">github</a></p>
-      <p>template by dom / <a href="https://twitter.com/zerstoerer">@zerstoerer</a></p>
-    </div>
-
+    </section>
+    <section id="demo" class="black">
+        <div class="inner-content">
+            <video class="responsive-video" autoplay loop muted playsInline>
+                <source src="assets/video/haiku-tunes-demo.mp4" type="video/mp4"><!-- TODO: Add this -->
+                Your browser does not support the video tag.
+            </video>
+            <h4 id="demo-caption">Demo of <cite>Haiku Tunes</cite></h4>
+        </div>
+    </section>
+    <section id="tips" class="white">
+        <div class="inner-content">
+            <button id="fullscreen-button" onclick="myGameInstance.SetFullscreen(1)"><i class="fas fa-expand-arrows-alt"></i> Full Screen</button>
+            <h2 id="changeable-heading">Tips</h2>
+            <ul>
+                <li id="changeable-tip"><i class="fa fa-clock-o" aria-hidden="true"></i> Give the activity a few moments to load. It can take up to minute or two on a weak WiFi connection.</li>
+                <li class="activity-tip"><i class="fas fa-keyboard" aria-hidden="true"></i> A keyboard is needed to play this game.</li>
+                <li class="activity-tip"><i class="fas fa-volume-up" aria-hidden="true"></i> Make sure your audio is on, so you can hear the music.</li>
+                <li class="activity-tip"><i class="fas fa-expand-arrows-alt" aria-hidden="true"></i> Expand activity to full screen for the best experience (see "Full Screen" link above).</li>
+                <li class="activity-tip"><i class="fas fa-book-open" aria-hidden="true"></i></i> It's an open book quiz! Feel free to use search engines/books/etc. for help when solving the puzzles. The <a href="#puzzle-answers">puzzle answers</a> are also available (viewable one-by-one so you don't have to reveal all at once) at the bottom of this page in case you get stuck.</li>
+            </ul>
+        </div>
+    </section>
+    <section id="credits" class="white">
+        <div class="bordered-callout">
+            <p>Art, music, and software development by <a href="http://www.leahtynan.com" target="_blank">Leah Tynan</a>. Poetry by A. Rehn, Janet Li, and Leah Tynan.</p>
+        </div>
+    </section>
+    <section id="about" class="white">
+        <div class="inner-content">
+            <h2>Concept &amp; Process</h2>
+            <h4><cite>Haiku Tunes</cite> (launched May 2021) is a digital puzzle experience that blends poetry, visual art, music, and game design.</h4>
+            <p>The user solves a series of crossword puzzle-esque clues, revealing sample words from a haiku line-by-line. When correct answers for all three lines of the poem are given, the full haiku is revealed. Art and music accompanies the experience, making it more immersive.</p>
+            <p>This game has two sources of inspiration:</p>
+            <ul>
+                <li>I got excited about Wordle in early 2022 and wanted to make a similarly easy-to-play game.</li>
+                <li>I've been nostalgic about the fun I had working with music and art on my previous independent work <a href="https://www.leahtynan.com/magic-puzzles">Magic Puzzles</a>, and wondered if there was a way I could combine music and art with a word game</li>
+            </ul>
+            <p><cite>Haiku Tunes</cite> features poetry (some donated from friends) on the theme of world peace as a reflection of the war in Europe that began around the same time I was brainstorming and planning out the game. In the art and music, I wanted to balance a portrayal of hopefulness and seriousness. It was a meditative way to process the events going on in the world and produce a work of art in support of peace and democracy. Content-wise, this is a very different direction for me so it was interesting combining it with my usual interactive media workflow.</p>
+            <p>This game has the flexibility to be re-skinned with other themes and perhaps other forms of visual art. I'm imagining something like a nature photography edition with Robert Frost-esque poems as the next edition. The software is small in scope, but mighty!</p>
+            <p>I worked on most of this game during my maternity leave. It was a great way to ease back into coding after the longest break I had taken from it &mdash; this in itself was inspiring and extremely encouraging. Check out my blog post <a href="https://leahtynan.com/blog/2022/04/11/gaming-and-coding-with-a-new-baby-at-home/">Gaming and Coding with a New Baby at Home</a> to learn more about this journey.</p>
+            <p>This work was created with the Unity game engine. Its C# code is open source on <a href="https://github.com/leahtynan/haiku-tunes" target="_blank">GitHub</a>.</p>
+            <p>Coming soon! The music from the game will be available in a YouTube playlist and I will post a series of Tweets with some technical tips from the development of this work.</p>
+            <h2 id="puzzle-answers">Puzzle Answers</h2>
+            <p>Similar to the way crossword puzzles are presented, I have provided the answers to the clues below in case you get stuck.</p>
+            <div class="puzzle-answers">
+                <div class="clue-answer-set">
+                    <h3>Puzzle 1</h3>
+                    <p>A synonym for harmony, may be preceded by "world": <span class="puzzle-answer" name="peace">[click for answer]</span></p>
+                    <p>The Beatles song, "All __________ Now": <span class="puzzle-answer" name="together">[click for answer]</span></p>
+                    <p>Not complicated: <span class="puzzle-answer" name="simple">[click for answer]</span></p>
+                </div>
+                <div class="clue-answer-set">
+                    <h3>Puzzle 2</h3>
+                    <p>Theme of Valentine's Day: <span class="puzzle-answer" name="love">[click for answer]</span></p>
+                    <p>House of _________atives: <span class="puzzle-answer" name="represent">[click for answer]</span></p>
+                    <p>All the people of the world: <span class="puzzle-answer" name="humanity">[click for answer]</span></p>
+                </div>
+                <div class="clue-answer-set">
+                    <h3>Puzzle 3</h3>
+                    <p>Star in the sky that doesn’t move, aka "Polaris": <span class="puzzle-answer" name="north">[click for answer]</span></p>
+                    <p>Units of a sentence: <span class="puzzle-answer" name="words">[click for answer]</span></p>
+                    <p>_____ and sound: <span class="puzzle-answer" name="safe">[click for answer]</span></p>
+                </div>
+            </div>
+    </section>
+    <footer id="footer">
+        <div id="footer-content-wrapper">
+            <!-- Contains icons and copyright line -->
+            <div id="icons-wrapper">
+                <!-- Centers the set of icon -->
+                <ul id="icons">
+                    <li id="email">
+                        <p id="email-copy-message">Click to copy e-mail address.</p>
+                        <a href="#>"><i aria-hidden="true" class="fas fa-envelope" title="E-mail"></i></a>
+                    </li>
+                    <li><a href="https://github.com/leahtynan" target="_blank"><i aria-hidden="true" class="fab fa-github" title="GitHub"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/leahtynan/" target="_blank"><i aria-hidden="true" class="fab fa-linkedin" title="LinkedIn"></i></a></li>
+                </ul>
+            </div>
+            <div id="copyright-wrapper">
+                <p>&copy; Leah Tynan 2022</p>
+            </div>
+        </div>
+    </footer>
     <script src="MyLoader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
@@ -62,21 +161,8 @@ https://github.com/sno/unity-webgl-responsive
         myGameInstance = unityInstance;
       });
     </script>
-
-    <!-- check for F key press to toggle full screen -->
-    <script>
-      var isFullscreen = false;
-
-      document.addEventListener('keydown', function(event) {
-          if (event.which === 70) {
-              if (!isFullscreen) {
-                myGameInstance.SetFullscreen(1);
-              } else {
-                myGameInstance.SetFullscreen(0);
-              }
-              isFullscreen = !isFullscreen;
-          }
-      });
-    </script>
-  </body>
+    <script src="assets/js/email.js"></script>
+    <script src="assets/js/mobile.js"></script>
+    <script src="assets/js/puzzleanswers.js"></script>
+</body>
 </html>

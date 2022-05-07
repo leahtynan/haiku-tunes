@@ -1,32 +1,9 @@
-/* demo */
-
-* {
-  font-family: monospace;
-}
-
-body {
-  background: #000;
-  color: #999;
-  font-size: 17px;
-}
-
-a {
-  color: #ccc;
-  text-decoration: underline;
-}
-
-.info {
-  width:100%;
-  padding:12px;
-  box-sizing: border-box;
-}
-
 /* webgl layout */
 
 .webgl-wrapper {
   display: inline-block;
-  width: 100%;
-  max-width: 1280px; /* remove this line for full width */
+  width: 90%;
+  margin: 15px 5% 25px 5%;
   position: relative;
 }
 
@@ -58,7 +35,7 @@ a {
 /* this element makes sure we preserve 16:9 aspect ratio */
 
 .aspect {
-  margin-top: calc(100% / {{{ WIDTH }}} * {{{ HEIGHT }}});
+  margin-top: calc(100% / 1920 * 1080);
 }
 
 /* progress bar */
