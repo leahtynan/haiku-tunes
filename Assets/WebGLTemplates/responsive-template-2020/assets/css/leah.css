@@ -107,23 +107,10 @@ a {
     text-decoration: none;
 }
 
-#tips i {
-    padding-right: 5px;
-    font-size: 21px;
-}
-
 a:hover {
     opacity: 0.5;
 }
 
-ul {
-    margin-left: 40px;
-}
-
-    ul li {
-        list-style-type: square;
-        margin: 10px 0;
-    }
 
 /* ------------------- Game/Demo ------------------- */
 
@@ -146,7 +133,10 @@ canvas {
 }
 
 /* ------------------- Tips ------------------- */
-
+#tips i {
+    padding-right: 5px;
+    font-size: 21px;
+}
 
 #tips li {
     list-style-type: none;
@@ -155,6 +145,20 @@ canvas {
     line-height: 24px;
     margin: 18px;
 }
+
+/* ------------------- About ------------------- */
+
+#about ul {
+    margin-left: 40px;
+}
+
+    #about ul li {
+        list-style-type: square;
+        margin: 10px 0;
+        font-size: 18px;
+        color: #4c4c4c;
+        line-height: 140%;
+    }
 
 /* ------------ Header & Navigation ------------ */
 
@@ -347,7 +351,7 @@ footer {
     }
 
     #demo {
-        margin-top: -25px;
+        /*margin-top: -25px; Remove for no logo in header */
         padding-top: 0;
     }
 
