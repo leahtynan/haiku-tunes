@@ -999,7 +999,7 @@ MonoBehaviour:
   poemViewer: {fileID: 1785494537}
   puzzleViewer: {fileID: 120280183}
   musicalPhrase: {fileID: 8300000, guid: d6dad1b39312223478e49255ea9baaaa, type: 3}
-  clue: 'A synonym for harmony, may be preceded by "world":'
+  clue: 'A synonym for "harmony", may be preceded by "world":'
   correctAnswer: peace
   correctAnswerLetters: 
   isAnsweredCorrectly: 0
@@ -4343,7 +4343,7 @@ MonoBehaviour:
   poemViewer: {fileID: 959555013}
   puzzleViewer: {fileID: 370522333}
   musicalPhrase: {fileID: 8300000, guid: c96780e00dada1f46abcb46185c42256, type: 3}
-  clue: As Dorothy would say, "There's no place like _____"
+  clue: 'As Dorothy would say, "There''s no place like _____":'
   correctAnswer: home
   correctAnswerLetters: 
   isAnsweredCorrectly: 0
