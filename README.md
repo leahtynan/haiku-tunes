@@ -2,7 +2,7 @@
 
 A word game made immersive by poetry, visual art, and music. 
 
-<a href="http://leahtynan.com/magic-puzzles">Play Haiku Tunes</a>
+<a href="http://leahtynan.com/haiku-tunes">Play Haiku Tunes</a>
 
 ## Interaction
 1. The user gets a clue for a word (like in a crossword puzzle, e.g. "Pokémon Gotta Catch 'Em ___")
